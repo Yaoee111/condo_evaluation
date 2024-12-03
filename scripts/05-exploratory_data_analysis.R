@@ -59,5 +59,5 @@ correlation_matrix <- cor(numerical_columns, use = "complete.obs")
 print("Correlation matrix:")
 print(correlation_matrix)
 
-# Pair Plot
+## Pair Plot
 pairs(numerical_columns, main = "Pair Plot of Numerical Features")
