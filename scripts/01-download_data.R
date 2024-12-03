@@ -1,5 +1,5 @@
 #### Preamble ####
-# Purpose: Downloads and saves the data about apartment evaluation from the Toronto Open Data.
+# Purpose: Download and save the data about apartment evaluation from the Toronto Open Data.
 # Author: Yiyi Yao
 # Date: 03 December 2024
 # Contact: ee.yao@mail.utoronto.ca
@@ -32,5 +32,5 @@ raw_data
 #### save raw data ####
 write_csv(
   x = raw_data,
-  file = "data/01-raw_data/raw_data.csv"
+  file = "data/01-raw_data/raw_apt_data.csv"
 )
