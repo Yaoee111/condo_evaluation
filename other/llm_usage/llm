@@ -1,0 +1,59 @@
+read the dataset
+ChatGPT said:
+ChatGPT
+The dataset appears to include detailed information about building properties, such as:
+
+Identification and location details: X_id, RSN, WARDNAME, SITE.ADDRESS, LATITUDE, LONGITUDE
+Temporal details: YEAR.REGISTERED, YEAR.BUILT, YEAR.EVALUATED
+Property characteristics: PROPERTY.TYPE, CONFIRMED.STOREYS, CONFIRMED.UNITS
+Evaluation metrics: CURRENT.BUILDING.EVAL.SCORE, PROACTIVE.BUILDING.SCORE, and other maintenance and safety-related scores
+Various aspects of property maintenance, repairs, safety plans, and tenant services logs.
+Potential Research Topics:
+Impact of Building Age on Maintenance and Evaluation Scores:
+
+Analyze how the age of a building (difference between YEAR.BUILT and current year) correlates with CURRENT.BUILDING.EVAL.SCORE or PROACTIVE.BUILDING.SCORE.
+Geographical Patterns in Building Conditions:
+
+Use LATITUDE and LONGITUDE to map buildings and examine if location influences evaluation scores or maintenance requirements.
+Tenant Services and Building Scores:
+
+Investigate if tenant service logs (TENANT.SERVICE.REQUEST.LOG) are associated with better or worse evaluation scores.
+Ward-Level Analysis of Building Maintenance:
+
+Examine if buildings in specific wards (WARD, WARDNAME) show significant differences in scores or maintenance levels.
+Safety and Maintenance Plan Compliance:
+
+Explore the relationship between compliance with plans (e.g., VITAL.SERVICE.PLAN, STATE.OF.GOOD.REPAIR.PLAN) and building evaluation scores.
+Predicting Building Conditions:
+
+Develop a predictive model for CURRENT.BUILDING.EVAL.SCORE using features such as YEAR.BUILT, WARD, and other maintenance-related variables.
+If you’d like, I can help further refine these ideas or explore the dataset in more detail for insights. Let me know!
+
+> plot(bayesian_model, prob = 0.95, pars = c("YEAR.BUILT", "CONFIRMED.UNITS", "WARD"))
+Error: No parameter(s) WARD
+ChatGPT said:
+ChatGPT
+Edited Bayesian Model Toronto Apt
+I've updated the code to exclude WARD from the parameter plot since it has multiple levels and can't be plotted in the same way. Let me know if you need any further assistance!
+
+You said:
+> predictions <- posterior_predict(bayesian_model, newdata = new_data)
+Error: NAs are not allowed in 'newdata'.
+> print("Predicted condition scores for new apartments:")
+[1] "Predicted condition scores for new apartments:"
+> print(rowMeans(predictions))
+Error: object 'predictions' not found
+ChatGPT said:
+ChatGPT
+Edited Bayesian Model Toronto Apt
+I've updated the code to handle missing values in new_data by removing rows with NA values and adding a check before making predictions. This should resolve the errors you encountered. Let me know if you need further assistance!
+
+You said:
+if (nrow(new_data) > 0) {
++   predictions <- posterior_predict(bayesian_model, newdata = new_data)
++   print("Predicted condition scores for new apartments:")
++   print(rowMeans(predictions))
++ } else {
++   print("No valid data available for prediction due to NAs in new_data.")
++ }
+Error: NAs are not allowed in 'newdata'.
