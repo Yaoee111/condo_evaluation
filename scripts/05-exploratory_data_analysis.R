@@ -1,5 +1,5 @@
 #### Preamble ####
-# Purpose: Model the analysis data about apartment evaluation.
+# Purpose: Graph the analysis data about apartment evaluation.
 # Author: Yiyi Yao
 # Date: 03 December 2024
 # Contact: ee.yao@mail.utoronto.ca
@@ -12,7 +12,7 @@ library(dplyr)
 library(ggplot2)
 
 
-#### Models ####
+#### Graphs ####
 # Read the dataset
 trt_apt <- read.csv("data/02-analysis_data/toronto_apartment_evaluation.csv")
 
