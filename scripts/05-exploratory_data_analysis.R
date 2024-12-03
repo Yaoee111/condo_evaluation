@@ -50,7 +50,7 @@ ggplot(trt_apt, aes(x = WARD, y = CURRENT.BUILDING.EVAL.SCORE)) +
   labs(title = "Evaluation Score by Ward", x = "Ward", y = "Evaluation Score") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
-# Correlation Matrix
+## Correlation Matrix
 numerical_columns <- trt_apt %>%
   select(YEAR.BUILT, CONFIRMED.STOREYS, 
          CONFIRMED.UNITS, CURRENT.BUILDING.EVAL.SCORE, PROACTIVE.BUILDING.SCORE, 
