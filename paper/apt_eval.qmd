@@ -484,7 +484,79 @@ modelplot(bayesian_model, conf_level = 0.90, size = 0.2) +
 @fig-rhat is a Rhat plot. It shows the Gelman-Rubin diagnostic $\hat{R}$ for all model parameters, which assesses convergence across Markov chains. All $\hat{R}$ values are close to 1 and below the commonly accepted threshold of 1.05, indicating that the chains have converged, and the samples are representative of the posterior distribution. This suggests that the model has achieved satisfactory convergence, and the parameter estimates can be trusted for inference.
 
 
-# Survey
+# Survey {#sec-survey}
+
+## Overview
+
+The goal of this survey is to gather residents' opinions about the condition and maintenance of their apartment buildings, complementing the RentSafeTO evaluation system. By incorporating tenant perspectives, the survey aims to provide a holistic understanding of building quality and identify areas for improvement. This feedback will help property managers, policymakers, and enforcement agencies address tenant concerns, prioritize maintenance efforts, and enhance housing standards across Toronto.
+
+The survey focuses on key aspects of apartment living, including cleanliness, safety, maintenance responsiveness, and overall satisfaction. The collected data will be analyzed alongside the RentSafeTO evaluation scores to explore correlations between tenant perceptions and objective building assessments.
+
+## Sampling Approach
+
+Target Population: 
+The target population includes residents of multi-unit residential buildings registered under the RentSafeTO program in Toronto. This ensures alignment with the buildings already evaluated by the program.
+
+Sample Size: 
+To ensure representativeness, the survey will aim to collect responses from approximately 5,000 residents, distributed proportionally across all wards in Toronto. The sample size is calculated to provide reliable insights with a margin of error of ±3% at a 95% confidence level.
+
+Sampling Technique: 
+A stratified random sampling approach will be used:
+Strata: The sampling will be stratified by ward to ensure geographic diversity.
+Random Sampling: Within each ward, a random sample of buildings will be selected, and a set number of residents per building will be invited to participate.
+
+Geographic Coverage:
+The survey will cover all 25 wards in Toronto, ensuring equitable representation of diverse neighborhoods and building types. Special attention will be given to include a mix of private, social housing, and Toronto Community Housing Corporation (TCHC) properties.
+
+## Recruitment of Respondents
+
+Outreach Channels:
+Email Invitations: Contact information will be obtained from property managers, with consent, to send email invitations to residents.
+Posters and Flyers: Informational posters and flyers will be placed in common areas of selected buildings.
+Community Partnerships: Collaboration with local tenant associations and housing organizations to encourage participation.
+
+Incentives:
+To boost response rates, participants will be offered a chance to win one of 50 $25 gift cards through a random draw. The incentive will be clearly communicated during recruitment.
+
+Ensuring Anonymity:
+To encourage honest responses, the survey will be anonymous, with no identifying information collected. This will be emphasized in all recruitment materials.
+
+## Survey Design
+
+Survey Format
+The survey will be conducted online using Google Forms, with an option for paper forms for residents without internet access. It will take approximately 10 minutes to complete.
+
+Sections and Question Types
+Demographics:
+
+Age group (checkboxes)
+Tenure in the building (dropdown menu: less than 1 year, 1–5 years, more than 5 years)
+Housing type (radio buttons: private, social housing, TCHC)
+Building Condition:
+
+"How would you rate the cleanliness of your building?" (Likert scale: 1–5)
+"Are common areas, such as hallways and lobbies, well-maintained?" (Yes/No)
+Safety and Security:
+
+"Do you feel safe in your building?" (Likert scale: 1–5)
+"Are security measures, such as cameras or locks, adequate?" (Yes/No)
+Maintenance and Responsiveness:
+
+"How satisfied are you with the responsiveness of building management to maintenance requests?" (Likert scale: 1–5)
+"How long does it typically take for maintenance requests to be resolved?" (multiple choice: less than a week, 1–2 weeks, more than 2 weeks)
+Overall Satisfaction:
+
+"How satisfied are you overall with living in your building?" (Likert scale: 1–5)
+"What is the most pressing issue you face as a tenant?" (open-ended)
+Suggestions for Improvement:
+
+"What changes would improve your living experience?" (open-ended)
+Pilot Testing
+The survey will be pilot-tested with 50 respondents to ensure clarity and effectiveness. Feedback will be incorporated to refine the questions and structure.
+
+### Link
+
+https://docs.google.com/forms/d/e/1FAIpQLSdN_4gdZUWW0m9YNXgFPflU_DjmRexdUMZNHmX1INj0s2c_2g/viewform?usp=sf_link
 
 
 
