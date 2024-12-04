@@ -187,8 +187,6 @@ Additional details about the model and validation processes are provided in Appe
 
 # Results {#sec-result}
 
-### Results
-
 Our results are summarized in @tbl-modelresults. The findings align well with our expectations regarding the relationships between building characteristics and evaluation scores. To avoid multicollinearity, the model excludes one variable from each category as the reference group: 'WARD' for the ward variable and buildings with fewer than 10 units for the 'CONFIRMED.UNITS' variable. The intercept represents the estimated evaluation score for buildings in 'WARD' with fewer than 10 units, and this baseline score is [Insert Intercept Value Here].
 
 As anticipated, 'YEAR.BUILT' has a positive coefficient, indicating that newer buildings tend to have higher evaluation scores. This suggests that newer buildings, benefiting from modern construction techniques and materials, are generally better maintained or designed to meet higher standards. The positive relationship implies that each additional year of construction is associated with a slight increase in evaluation scores, reflecting the advantages of newer infrastructure.
@@ -223,21 +221,48 @@ modelsummary(
 ```
 
 
+
+
 # Discussion {#sec-discussion}
 
-## First discussion point {#sec-first-point}
+##  Achievements {#sec-first-point}
 
-If my paper were 10 pages, then should be be at least 2.5 pages. The discussion is a chance to show off what you know and what you learnt from all this.
+In this paper, we analyzed building evaluation scores from the RentSafeTO dataset to investigate the factors influencing compliance with property standards in Toronto. Using a Bayesian linear regression model, we examined how building characteristics—such as year built, number of units, and geographic location (ward)—affect evaluation scores. Our analysis incorporated random effects to account for ward-level variability and used weakly informative priors to ensure robust inference.
 
-## Second discussion point
+We selected a subset of the dataset focused on downtown Toronto and identified key predictors of building evaluation scores. The results highlight the positive relationships between newer construction, larger building size, and higher evaluation scores, while also revealing variability in scores across different wards. We visualized these relationships using regression plots, boxplots, and credibility interval plots, providing a clear picture of the factors contributing to evaluation outcomes.
 
-Please don't use these as sub-heading labels - change them to be what your point actually is.
+Our findings emphasize the importance of building characteristics and local context in determining compliance with property standards. This paper also demonstrates the utility of Bayesian modeling for analyzing hierarchical datasets like RentSafeTO, offering flexibility in capturing both fixed effects and random variability. By focusing on actionable insights, we aim to inform property management practices and policy decisions aimed at improving housing standards in Toronto.
 
-## Third discussion point
+## About Building Maintenance and Standards {#sec-second-point}
 
-## Weaknesses and next steps
+From this analysis, we gain valuable insights into the factors that influence building maintenance and compliance with property standards. Specifically, we learn that newer buildings tend to perform better in evaluations, suggesting that modern construction practices and adherence to updated regulations play a significant role in meeting maintenance standards. This highlights the importance of updating building codes and encouraging renovations to improve compliance in older properties.
 
-Weaknesses and next steps should also be included.
+Additionally, the positive relationship between the number of units in a building and its evaluation score underscores the role of scale in property management. Larger buildings, often equipped with more structured management systems and dedicated resources, appear better positioned to meet maintenance standards compared to smaller properties. This finding suggests that economies of scale in management can lead to better overall building conditions.
+
+Lastly, the variability in scores across different wards reveals how geographic and neighborhood factors influence compliance. Local policies, enforcement rigor, and neighborhood socioeconomic conditions likely contribute to these differences, underscoring the need for context-sensitive strategies to improve housing standards across the city.
+
+## Limitation {#sec-third-point}
+
+There are several limitations to consider. First, the RentSafeTO dataset only includes buildings registered under the program, excluding smaller buildings and those not covered by the bylaw. As a result, the findings may not generalize to all rental housing in Toronto, particularly for properties outside the program’s scope.
+
+Additionally, the dataset primarily focuses on physical and structural conditions, leaving out important contextual factors such as tenant satisfaction, management practices, or broader social influences on building quality. These unobserved variables may introduce bias or limit the comprehensiveness of the analysis. Moreover, evaluation scores rely on inspections conducted by different bylaw enforcement officers, which may lead to variability due to subjective judgment or inconsistencies in enforcement practices.
+
+The Bayesian model employed in this analysis assumes linear relationships between predictors, such as YEAR.BUILT and CONFIRMED.UNITS, and evaluation scores. While this simplification is useful for interpretability, it may overlook more complex interactions, such as the combined effects of building age and maintenance practices. Furthermore, missing values in key variables, such as evaluation scores and building characteristics, pose challenges for analysis. For instance, blank or zero scores may reflect non-evaluated cases rather than true building conditions, potentially skewing the results.
+
+Finally, the results are context-specific and tailored to the RentSafeTO program in Toronto. They may not apply to other regions with different building standards, enforcement practices, or housing markets. These limitations emphasize the need for cautious interpretation of the findings and highlight areas for future research, such as integrating qualitative data on tenant experiences or examining the impact of inspector variability on evaluation outcomes.
+
+## Next steps {#sec-fourth-point}
+
+First, expanding the dataset to include a broader range of buildings, including smaller rental properties and those not registered with RentSafeTO, would provide a more comprehensive understanding of building conditions across Toronto. Incorporating data from other regions could also help generalize the findings and explore how different enforcement practices or housing markets affect evaluation outcomes.
+
+Second, integrating additional variables, such as tenant satisfaction surveys, management practices, and neighborhood socioeconomic factors, would provide a more holistic view of what influences building quality. This could help identify factors beyond physical structure that contribute to compliance with property standards. Collecting longitudinal data on building conditions over time could also help explore the effects of renovations, policy changes, or aging on evaluation scores.
+
+Third, standardizing inspection practices and incorporating measures to assess variability between inspectors could improve the reliability of evaluation scores. Training programs and inter-rater reliability checks could be implemented to ensure consistency in scoring across different inspectors and regions.
+
+Finally, applying more flexible modeling approaches could capture complex interactions between predictors. For example, hierarchical or non-linear models might better reflect how building age, size, and geographic factors interact to influence evaluation scores. Exploring machine learning approaches could also help uncover hidden patterns in the data while providing robust predictions.
+
+
+
 
 \newpage
 
