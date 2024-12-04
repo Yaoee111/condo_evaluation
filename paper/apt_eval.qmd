@@ -1,13 +1,14 @@
 ---
-title: "My title"
-subtitle: "My subtitle if needed"
+title: "Understanding Apartment Evaluation in Toronto"
+subtitle: "Age, Size, and Location Influenced Score with Property Standards"
 author: 
   - Yiyi Yao
 thanks: "Code and data are available at: [https://github.com/Yaoee111/condo_evaluation]."
 date: 03 December, 2024
 date-format: long
-abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
+abstract: "This paper analyzes building evaluation scores from Toronto's RentSafeTO program to understand the factors influencing compliance with property standards. Using a Bayesian regression model, we examined the relationships between building characteristics such as year built, number of units, and geographic location. We found that newer buildings, larger properties, and those in specific wards are more likely to achieve higher evaluation scores, reflecting better maintenance and compliance. These findings highlight the importance of modern construction, economies of scale in property management, and localized enforcement practices in ensuring housing quality, offering insights to policymakers and property managers striving to improve urban housing standards."
 format: pdf
+toc: true
 number-sections: true
 bibliography: references.bib
 ---
@@ -36,19 +37,26 @@ data <- read.csv("/cloud/project/data/02-analysis_data/toronto_apartment_evaluat
 
 # Introduction
 
-Overview paragraph
+Ensuring the quality and safety of rental housing is a critical issue in urban areas, especially as cities like Toronto face growing populations and aging infrastructure. The RentSafeTO program, launched in 2017, is a bylaw enforcement initiative designed to maintain property standards for multi-unit residential buildings. This program assesses compliance with maintenance standards, focusing on elements such as building exteriors, mechanical systems, and common areas. While the program provides a structured approach to evaluating building conditions, understanding the factors that influence these evaluation scores remains crucial for improving housing standards and targeting interventions effectively.
 
-Estimand paragraph
+This paper investigates the key determinants of building evaluation scores in Toronto, using data from the RentSafeTO program. Specifically, we examine how building characteristics—such as the year of construction, number of units, and geographic location (ward)—affect compliance with property standards. Despite the availability of detailed evaluation data, limited research has explored the underlying factors that contribute to variations in scores across buildings and neighborhoods. This gap is significant, as understanding these relationships can inform policy decisions and enhance the effectiveness of programs like RentSafeTO.
 
-Results paragraph
+To address this gap, we applied a Bayesian linear regression model to analyze the relationships between building characteristics and evaluation scores. This model accounts for ward-level variability through random effects, capturing local factors that may influence compliance. The findings reveal that newer buildings and larger properties generally achieve higher evaluation scores, likely due to modern construction practices and economies of scale in property management. Additionally, geographic location plays a significant role, with some wards showing consistently higher or lower scores, reflecting neighborhood-specific dynamics.
 
-Why it matters paragraph
+These results are important because they provide actionable insights for policymakers and property managers. By identifying the factors that influence compliance, this research highlights opportunities to prioritize maintenance efforts, target policy interventions, and improve the consistency of property evaluations. Ultimately, understanding these dynamics can contribute to better housing conditions and more equitable enforcement of property standards across Toronto.
 
-Telegraphing paragraph: The remainder of this paper is structured as follows. @sec-data....
+The remainder of this paper is organized into distinct sections. @sec-data provides an overview of the dataset used in our analysis, including tables and graphs to illustrate the characteristics of buildings and evaluation scores. @sec-model outlines the Bayesian model employed, explaining its formulation and justification. @sec-result presents the findings, using tables and visualizations to highlight the relationships between building characteristics and evaluation scores. Finally, @sec-discussion offers a detailed discussion of the results, focusing on how factors such as construction year, building size, and geographic location influence compliance with property standards. 
+
+## Estimand
+
+The estimand in this paper is the evaluation score of apartment buildings as a measure of their compliance with property standards under the RentSafeTO program. However, it is challenging to assess the exact evaluation scores for all apartment buildings in Toronto, as not all buildings are included in the RentSafeTO dataset. For instance, smaller buildings or those outside the program's jurisdiction are excluded, limiting the scope of evaluation. Additionally, variability in inspections and data gaps may impact the accuracy of the scores. Therefore, in this paper, we estimate the estimand using a Bayesian linear regression model fitted with a subset of the RentSafeTO dataset.
+
+
+
 
 # Data {#sec-data}
 
-We use the statistical programming language R [@citeR] with packages `tidyverse` \[\@\], `ggplot2` \[\@\], Follow @tellingstories.
+We use the statistical programming language R [@citeR] with packages `tidyverse` [citeTidyverse], , `rstanarm` [@rstanarm], `modelsummary` [@citeModleSummary], `knitr` [@citeKnitr], `kableExtra` [@citeKableExtra], `tidybayes` [@tidybayes], and follow @tellingstories.
 
 ## Data source
 
