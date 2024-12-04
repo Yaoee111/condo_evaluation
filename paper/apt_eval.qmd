@@ -1,0 +1,397 @@
+---
+title: "My title"
+subtitle: "My subtitle if needed"
+author: 
+  - Yiyi Yao
+thanks: "Code and data are available at: [https://github.com/Yaoee111/condo_evaluation]."
+date: 03 December, 2024
+date-format: long
+abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
+format: pdf
+number-sections: true
+bibliography: references.bib
+---
+
+```{r}
+#| include: false
+#| warning: false
+#| message: false
+
+library(tidyverse)
+library(ggplot2)
+library(knitr)
+library(tibble)
+library(kableExtra)
+library(brms)
+library(bayesplot)
+library(tidybayes)
+library(rstanarm)
+```
+
+```{r}
+#| include: false
+#| warning: false
+#| message: false
+
+data <- read.csv("/cloud/project/data/02-analysis_data/toronto_apartment_evaluation.csv")
+```
+
+
+# Introduction
+
+Overview paragraph
+
+Estimand paragraph
+
+Results paragraph
+
+Why it matters paragraph
+
+Telegraphing paragraph: The remainder of this paper is structured as follows. @sec-data....
+
+# Data {#sec-data}
+
+We use the statistical programming language R [@citeR] with packages `tidyverse` \[\@\], `ggplot2` \[\@\], Follow @tellingstories.
+
+## Data source
+
+Data for this research comes from RentSafeTO program provided by Open Data Toronto (@opendata). This dataset contains building evaluation scores for apartment buildings registered with the RentSafeTO program in Toronto until 2023. RentSafeTO (@rentsafeto_tool), established in 2017, is a bylaw enforcement initiative designed to ensure that apartment buildings with three or more storeys or at least 10 units meet required maintenance standards. Alongside evaluation details, the dataset provides information about the buildings, including their address, year built, and geographical coordinates. The RentSafeTO dataset was selected because it provides a comprehensive overview of apartment building maintenance standards in Toronto.
+
+## Data Features
+
+The original RentSafeTo dataset, which shows in \@ in Appendix @sec-data-details, contains 3573 data entries and many variables. Since we only interested in data in downtown Toronto, this report will only explore and analyze through several data features. We chose these 10 variables: RSN, WARD, WARDNAME, YEAR.BUILT, PROPERTY.TYPE, CONFIRMED.STOREYS, CONFIRMED.UNITS, CURRENT.BUILDING.EVAL.SCORE, PROACTIVE.BUILDING.SCORE, CURRENT.REACTIVE.SCORE. Details of these selected variables are in @tbl-feature. We could use such features to predict building condition in downtown Toronto.
+
+## Data Measurement
+
+The data in this dataset was collected by bylaw enforcement officers as part of the RentSafeTO program. These inspections evaluate building maintenance standards across various categories, such as exterior grounds, mechanical systems, and common areas. Scores are assigned on a scale of 1 to 3, with 1 being the lowest and 3 being the highest. A score of 0 is given when an item cannot be evaluated due to obstruction or refusal, and blanks are recorded when an item is not applicable.
+
+The unit of measurement for most numerical data is an ordinal score (1 to 3). Other features, such as building types or ward names, are categorical with no specific units.
+
+## Data limitation
+
+The data represents evaluations of buildings registered under RentSafeTO, so it does not cover all apartment buildings in Toronto. This limits its ability to represent the full state of rental housing in the city. Additionally, the evaluation process can be affected by variability in inspector judgments, leading to potential inconsistencies in scores. Gaps in the data, such as 0 scores or blanks, further complicate analysis and reduce the dataset's completeness. Moreover, the dataset primarily focuses on physical and structural conditions, neglecting tenant perspectives or broader social factors that may influence overall building quality. These limitations highlight the need to interpret the data with caution when making broader inferences.
+
+## Data Methodology
+
+The original dataset contains information on all registered apartment buildings in the Toronto area, along with the data needed for their evaluation and scoring. This comprehensive data includes various attributes related to building conditions and maintenance. However, since our primary research objective is to predict the conditions of apartment buildings specifically in the downtown area, we narrowed our focus to the variables most relevant to this goal. To achieve this, we carefully selected key features, like YEAR.BUILT, PROPERTY.TYPE, CONFIRMED.UNITS, CURRENT.BUILDING.EVAL.SCORE, and clean the original dataset, ensuring it aligns with the scope and requirements of our analysis.
+
+## Data Visualization
+
+@fig-data1 illustrates the relationship between CURRENT.BUILDING.EVAL.SCORE and YEAR.BUILT. Each point represents a building, with its year of construction on the x-axis and its evaluation score on the y-axis. The plot includes a trend line generated through linear regression to highlight any general trends. The positive trend line suggests that buildings constructed more recently tend to have slightly higher evaluation scores, although the relationship is not very strong. This could indicate that newer buildings are generally better maintained or constructed to meet higher standards. However, there is considerable variability in the scores for buildings of all ages, as shown by the spread of points around the trend line.
+
+Outliers in the older buildings with high scores could reflect cases where older properties have been well-maintained or renovated. Conversely, some newer buildings with lower scores might indicate specific issues despite their recent construction. This graph highlights the importance of maintenance and management practices in addition to construction year.
+
+```{r}
+#| label: fig-data1
+#| tbl-cap: "Relationship between Evaluation Score and Year Built"
+#| message: false
+#| echo: false
+#| warning: false
+
+ggplot(data, aes(x = YEAR.BUILT, y = CURRENT.BUILDING.EVAL.SCORE)) +
+  geom_point() +
+  geom_smooth(method = "lm", col = "blue") +
+  labs(
+    x = "Year Built",
+    y = "Current Building Evaluation Score"
+  )
+```
+
+@fig-data2 compares CURRENT.BUILDING.EVAL.SCORE across different PROPERTY.TYPE categories. Each box represents the distribution of scores for a specific property type (e.g., Private, Social Housing, TCHC). The graph shows the median score as well as the range of scores within each category. All property types have relatively high median scores, but slight variations can be observed. TCHC and Social Housing buildings have marginally higher medians than Private properties, suggesting potentially better maintenance or stricter compliance standards. Private properties exhibit the largest range of scores, with several outliers at the lower end. This indicates that some private buildings may significantly underperform in terms of maintenance and compliance. Social Housing and TCHC properties have narrower score distributions, implying more consistent maintenance or management practices. The lower outliers in Private properties highlight a subset of buildings that fall well below the typical evaluation scores, potentially requiring closer attention or intervention.
+
+The graph suggests that Social Housing and TCHC properties are generally more consistent in maintaining standards, while Private properties show greater variability and occasional poor performance.
+
+```{r}
+#| label: fig-data2
+#| tbl-cap: "Evaluation Score by Property Type"
+#| message: false
+#| echo: false
+#| warning: false
+
+ggplot(data, aes(x = PROPERTY.TYPE, y = CURRENT.BUILDING.EVAL.SCORE)) +
+  geom_boxplot() +
+  labs(
+    x = "Property Type",
+    y = "Current Building Evaluation Score"
+  )
+```
+
+@fig-data3 shows the relationship between CURRENT.BUILDING.EVAL.SCORE and CONFIRMED.UNITS. The x-axis represents the number of units in a building, while the y-axis shows the evaluation score. A regression trend line is included to illustrate any patterns in the data. The line shows a slight upward trend, suggesting that buildings with more units tend to have marginally higher evaluation scores. This could indicate that larger buildings might have more structured management systems, leading to better maintenance and compliance. There is a significant spread of scores across all building sizes, with no strong clustering or consistency. This suggests that the number of units alone does not strongly predict evaluation scores, and other factors, such as management quality or age of the building, might play a more prominent role. A few buildings with lower scores, regardless of their number of units, could highlight individual cases where maintenance or compliance was poor, despite size advantages.
+
+While larger buildings may have slightly better evaluation scores on average, the overall variability indicates that the size of a building is not a decisive factor in determining its condition or compliance. This suggests the need for a more nuanced analysis considering additional variables.
+
+```{r}
+#| label: fig-data3
+#| tbl-cap: "Relationship between Evaluation Score and Number of Units"
+#| message: false
+#| echo: false
+#| warning: false
+
+ggplot(data, aes(x = CONFIRMED.UNITS, y = CURRENT.BUILDING.EVAL.SCORE)) +
+  geom_point() +
+  geom_smooth(method = "lm", col = "red") +
+  labs(
+    x = "Number of Units",
+    y = "Current Building Evaluation Score"
+  )
+```
+
+
+
+# Model
+
+In our analysis, we utilized a Bayesian logistic regression model to examine the relationship between apartment evaluation and other building factors ---- built year, number of units, and location of building (ward). Background details and diagnostics are included in [Appendix -@sec-model-details].
+
+## Model set-up
+
+The model is formulated as follows:
+
+```{=tex}
+\begin{align} 
+\text{SCORE}_i &\sim \mbox{Normal}(\mu_i, \sigma^2) \\
+\mu_i &= \beta_0 + \beta_1 \times \text{YEAR}_i + \beta_2 \times \text{UNITS}_i + \gamma_{\text{WARD}_i} \\
+\gamma_{\text{WARD}_i} &\sim \mbox{Normal}(0, \tau^2) \\
+\beta_0 &\sim \mbox{Normal}(0, 5) \\
+\beta_1 &\sim \mbox{Normal}(0, 5) \\
+\beta_2 &\sim \mbox{Normal}(0, 5) \\
+\tau &\sim \mbox{Half-Cauchy}(0, 2) \\
+\sigma &\sim \mbox{Half-Cauchy}(0, 2)
+\end{align}
+```
+
+In this model, ($\text{SCORE}_i$) represents the evaluation score of building $i$. The mean evaluation score, ($\mu_i$), is modeled as a linear combination of the intercept ($\beta_0$), the effect of the year the building was built ($\beta_1 \times \text{YEAR}_i$), the effect of the number of units in the building ($\beta_2\times\text{UNITS}_i$), and a random effect for the location of the building ($\gamma_{\text{WARD}_i}$). Here, ($\text{YEAR}_i$) and ($\text{UNITS}_i$) are continuous predictors, while ($\gamma_{\text{WARD}_i}$) accounts for ward-specific variability in evaluation scores. The random effect ($\gamma_{\text{WARD}_i}$) is modeled as normally distributed with a mean of 0 and variance ($\tau^2$), reflecting the assumption that wards have no overall bias, but scores may vary across them.
+
+The intercept ($\beta_0$) and coefficients ($\beta_1, \beta_2$) are assigned weakly informative normal priors with a mean of 0 and a standard deviation of 5, reflecting a prior belief that most plausible values are moderate but allowing flexibility for larger effects. The variability of the ward-level random effects ($\tau$) and the residual variability ($\sigma$) are modeled using half-Cauchy priors with a scale parameter of 2, favoring smaller values while accommodating the possibility of substantial variability. This formulation ensures that the model captures both the fixed effects of the predictors and the random effects of location, providing a robust framework for analyzing the relationship between building characteristics and evaluation scores.
+
+This Bayesian model was chosen because it effectively accounts for the hierarchical structure of the data by including a random effect for `WARD`, capturing ward-level variability in building evaluation scores due to unobserved factors like local policies or management practices. Additionally, the Bayesian framework allows for robust inference by incorporating weakly informative priors, which regularize parameter estimates and provide a full representation of uncertainty, ensuring more reliable and interpretable results compared to traditional frequentest approaches.
+
+We run the model in R [@citeR] using the `rstanarm` [@citeRstanarm] package of . We use the default priors from `rstanarm`.
+
+## Model justification
+
+Regarding the relationship between building characteristics and evaluation scores, we anticipate that newer buildings are more likely to receive higher evaluation scores. This expectation stems from the assumption that newer buildings are constructed with modern materials and methods, adhere to updated standards, and are less prone to deterioration. Conversely, older buildings may face challenges related to aging infrastructure, which could negatively impact their evaluation scores if maintenance is not consistently performed.
+
+Similarly, we expect a positive relationship between the number of units in a building and evaluation scores. Larger buildings often have more structured management systems and resources allocated for maintenance, which can lead to better compliance with property standards. In contrast, smaller buildings may lack the economies of scale and organizational support that larger properties benefit from, potentially resulting in lower scores.
+
+Finally, the inclusion of a random effect for 'WARD' accounts for geographic variability in evaluation scores. Factors such as neighborhood characteristics, local regulations, and differences in inspection practices across wards may influence building evaluations. This hierarchical structure ensures that the model appropriately captures these unobserved factors, making the predictions more robust and reflective of real-world dynamics.
+
+## Model limitation
+
+While the model provides valuable insights, it has several limitations and relies on assumptions that may not hold in all contexts. First, the assumption of a linear relationship between predictors (e.g., 'YEAR.BUILT' and 'CONFIRMED.UNITS') and the evaluation score may oversimplify complex interactions. For instance, the effect of a building's age on evaluation scores may vary depending on factors like renovation history or maintenance practices, which are not captured in the dataset. Second, the model assumes that the random effect for 'WARD' fully accounts for geographic variability, but unobserved confounders such as neighborhood socioeconomic status or differences in enforcement rigor may influence evaluation outcomes. Additionally, the use of standardized continuous predictors assumes that their scales are comparable, which may obscure meaningful differences in their effects. Finally, the model is context-specific and tailored to Toronto's RentSafeTO program, limiting its generalizability to other regions with different building standards, inspection processes, or housing markets. These limitations suggest the need for cautious interpretation and highlight areas for potential refinement in future analyses.
+
+## Model Validation
+
+For posterior predictive checks, in @fig-post_dist, the alignment of the posterior predictive distribution with the observed building evaluation scores suggests that the model accurately captures the patterns in the data. This indicates the reliability of the model in representing the relationship between building characteristics and evaluation scores. Additionally, @fig-post_prior compares the posterior to the prior distributions, revealing significant parameter shifts, particularly for 'YEAR.BUILT' and 'CONFIRMED.UNITS'. These shifts demonstrate that the data provided strong evidence to update the priors, though minimal changes for some parameters may reflect either limited data informativeness or initial alignment with the priors.
+
+
+
+Additional details about the model and validation processes are provided in Appendix @sec-model-details.
+
+
+# Results
+
+Our results are summarized in .
+
+# Discussion
+
+## First discussion point {#sec-first-point}
+
+If my paper were 10 pages, then should be be at least 2.5 pages. The discussion is a chance to show off what you know and what you learnt from all this.
+
+## Second discussion point
+
+Please don't use these as sub-heading labels - change them to be what your point actually is.
+
+## Third discussion point
+
+## Weaknesses and next steps
+
+Weaknesses and next steps should also be included.
+
+\newpage
+
+\appendix
+
+# Appendix {-}
+
+# Data details {#sec-data-details}
+
+## Raw data
+
+@tbl-raw shows the preview of the raw RentSafeTo dataset.
+
+```{r}
+#| label: tbl-raw
+#| tbl-cap: "Preview of the raw RentSafeTo dataset"
+#| message: false
+#| echo: false
+#| warning: false
+
+raw_data <- read.csv("/cloud/project/data/01-raw_data/raw_apt_data.csv")
+
+raw_data[1:5, 1:5] |>
+  kable()
+
+raw_data[1:5, 6:10] |>
+  kable()
+```
+
+## Selected variables
+
+@tbl-feature shows the explanation of the chosen variables.
+
+```{r}
+#| label: tbl-feature
+#| tbl-cap: "Selected feature of the RentSafeTo dataset"
+#| message: false
+#| echo: false
+#| warning: false
+
+# Define the data features
+feature <- tibble(
+  Data_feature = c(
+    "RSN", 
+    "WARD", 
+    "WARDNAME", 
+    "YEAR.BUILT", 
+    "PROPERTY.TYPE", 
+    "CONFIRMED.STOREYS", 
+    "CONFIRMED.UNITS", 
+    "CURRENT.BUILDING.EVAL.SCORE", 
+    "PROACTIVE.BUILDING.SCORE", 
+    "CURRENT.REACTIVE.SCORE"
+  ),
+  Data_definition = c(
+    "ID number for a building", 
+    "Ward where the building is located", 
+    "Name of the ward", 
+    "Year the building was built", 
+    "Type of property owner", 
+    "Number of storeys in the building", 
+    "Number of units in the building", 
+    "An assessment of the building's compliance with property standards, calculated by combining the reactive and proactive scores", 
+    "The score of the latest proactive evaluation of a building's common areas, reflecting weighted scores of applicable categories", 
+    "Total score for all applicable Orders and Notices of Violation issued for a building"
+  )
+)
+
+# Create the table and apply formatting
+kable(feature, format = "latex", booktabs = TRUE) %>%
+  kable_styling() %>%
+  column_spec(1, bold = TRUE, width = "20em") %>%  
+  column_spec(2, width = "25em")  
+```
+
+Particularly, 'WARD' is the number from the 25-ward system (@ward) which is used to mark different regions in Toronto. In this research, we choose 11 and 13 which are 'University-Rosedale' and 'Toronto Centre'.
+
+# Model details {#sec-model-details}
+
+## Posterior predictive check
+
+```{r}
+#| label: fig-post_dist
+#| fig-cap: Posterior predictive distribution for Bayesian linear model
+#| echo: false
+#| warning: false
+#| message: false
+
+# Load the saved model
+bayesian_model <- readRDS("/cloud/project/model/bayesian_model.rds")
+
+# Perform posterior predictive checks
+pp_check(bayesian_model, type = "dens_overlay") +
+  theme_minimal() +
+  theme(legend.position = "bottom") +
+  ggtitle("Posterior Predictive Check: Density Overlay")
+```
+
+```{r}
+#| label: fig-post_prior
+#| fig-cap: Comparison of posterior and prior distributions for Bayesian linear model
+#| echo: false
+#| warning: false
+#| message: false
+
+prior_draws <- tibble(
+  `(Intercept)` = rnorm(4000, 0, 5),
+  `YEAR.BUILT` = rnorm(4000, 0, 2.5),
+  `CONFIRMED.UNITS` = rnorm(4000, 0, 2.5)
+) %>%
+  pivot_longer(cols = everything(), names_to = "Parameter", values_to = "Value") %>%
+  mutate(Type = "Prior")
+
+# Extract posterior samples
+posterior_draws <- as_draws_df(as.matrix(bayesian_model)) %>%
+  select(`(Intercept)`, `YEAR.BUILT`, `CONFIRMED.UNITS`) %>%
+  pivot_longer(cols = everything(), names_to = "Parameter", values_to = "Value") %>%
+  mutate(Type = "Posterior")
+
+# Combine prior and posterior samples
+prior_posterior <- bind_rows(prior_draws, posterior_draws)
+
+# Plot comparison of posterior and prior
+ggplot(prior_posterior, aes(x = Parameter, y = Value, color = Type, fill = Type)) +
+  stat_halfeye(alpha = 0.6, adjust = 0.5, width = 0.7, justification = -0.3) +
+  theme_minimal() +
+  coord_flip() +
+  labs(
+    title = "Comparison of Posterior and Prior Distributions",
+    x = "Parameter",
+    y = "Value",
+    color = "Distribution Type",
+    fill = "Distribution Type"
+  ) +
+  theme(
+    legend.position = "bottom",
+    axis.text.x = element_text(hjust = 1, vjust = 0.5),
+    text = element_text(size = 8)
+  ) +
+  guides(color = guide_legend(ncol = 4))
+```
+
+In @fig-post_dist, we compare the model's predicted values to the observed data. This involves overlaying the posterior predictive distribution on the observed data distribution. The purpose of this check is to evaluate whether the model can reproduce patterns and variability seen in the actual evaluation scores. The results indicate a good fit, as the predicted and observed distributions align closely, suggesting the model captures the underlying structure of the data effectively. This validation supports the model's reliability in representing the relationship between building characteristics and evaluation scores.
+
+@fig-post_prior compares the posterior with the prior distributions for key parameters in the Bayesian model, including the intercept, 'YEAR.BUILT', and 'CONFIRMED.UNITS'. The plot uses overlapping density curves to illustrate how the data influenced the parameter estimates. The posterior distributions shift away from the priors, indicating that the data provided substantial evidence to update the parameter values. For instance, the posterior for 'YEAR.BUILT' narrows and centers around values informed by the observed data, reflecting its significant role in predicting evaluation scores.
+
+## Markov chain Monte Carlo Convergence Check
+
+```{r}
+#| echo: false
+#| eval: true
+#| message: false
+#| warning: false
+#| label: fig-trace
+#| fig-cap: "Trace plot of intercept and predictors"
+#| fig-subcap: ["Trace plot of Intercept", "Trace plot of YEAR.BUILT", "Trace plot of CONFIRMED.UNITS"]
+#| layout-ncol: 2
+
+# Load the saved model
+bayesian_model <- readRDS("/cloud/project/model/bayesian_model.rds")
+
+# Trace plots for key fixed effects
+plot(bayesian_model, "trace", "(Intercept)")
+plot(bayesian_model, "trace", "YEAR.BUILT")
+plot(bayesian_model, "trace", "CONFIRMED.UNITS")
+```
+
+```{r}
+#| echo: false
+#| eval: true
+#| message: false
+#| warning: false
+#| label: fig-rhat
+#| fig-cap: "Rhat plot"
+
+plot(bayesian_model, "rhat")
+```
+
+@fig-trace is a trace plot. It shows the sampling paths for key fixed effects, including the intercept, 'YEAR.BUILT', and 'CONFIRMED.UNITS', across all Markov chains. The plots demonstrate good mixing, with chains overlapping and exploring the posterior distribution consistently without any visible drifts or irregular patterns. This suggests that the sampling process converged for these parameters, providing reliable estimates for the posterior distributions.
+
+@fig-rhat is a Rhat plot. It shows the Gelman-Rubin diagnostic $\hat{R}$ for all model parameters, which assesses convergence across Markov chains. All $\hat{R}$ values are close to 1 and below the commonly accepted threshold of 1.05, indicating that the chains have converged, and the samples are representative of the posterior distribution. This suggests that the model has achieved satisfactory convergence, and the parameter estimates can be trusted for inference.
+
+
+# Survey
+
+
+
+# References
