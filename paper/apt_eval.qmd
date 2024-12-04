@@ -18,14 +18,11 @@ bibliography: references.bib
 #| message: false
 
 library(tidyverse)
-library(ggplot2)
 library(knitr)
-library(tibble)
 library(kableExtra)
-library(brms)
-library(bayesplot)
-library(tidybayes)
 library(rstanarm)
+library(modelsummary)
+library(tidybayes)
 ```
 
 ```{r}
@@ -90,7 +87,7 @@ Outliers in the older buildings with high scores could reflect cases where older
 
 ggplot(data, aes(x = YEAR.BUILT, y = CURRENT.BUILDING.EVAL.SCORE)) +
   geom_point() +
-  geom_smooth(method = "lm", col = "blue") +
+  geom_smooth(method = "lm", formula = y ~ x, col = "blue") +
   labs(
     x = "Year Built",
     y = "Current Building Evaluation Score"
@@ -138,7 +135,7 @@ ggplot(data, aes(x = CONFIRMED.UNITS, y = CURRENT.BUILDING.EVAL.SCORE)) +
 
 
 
-# Model
+# Model {#sec-model}
 
 In our analysis, we utilized a Bayesian logistic regression model to examine the relationship between apartment evaluation and other building factors ---- built year, number of units, and location of building (ward). Background details and diagnostics are included in [Appendix -@sec-model-details].
 
@@ -183,16 +180,50 @@ While the model provides valuable insights, it has several limitations and relie
 
 For posterior predictive checks, in @fig-post_dist, the alignment of the posterior predictive distribution with the observed building evaluation scores suggests that the model accurately captures the patterns in the data. This indicates the reliability of the model in representing the relationship between building characteristics and evaluation scores. Additionally, @fig-post_prior compares the posterior to the prior distributions, revealing significant parameter shifts, particularly for 'YEAR.BUILT' and 'CONFIRMED.UNITS'. These shifts demonstrate that the data provided strong evidence to update the priors, though minimal changes for some parameters may reflect either limited data informativeness or initial alignment with the priors.
 
-
+For Markov chain Monte Carlo (MCMC) convergence checks, @fig-trace shows trace plots for the intercept and key predictors. These plots indicate good mixing and consistent exploration of the posterior distribution, suggesting reliable convergence for these parameters. Furthermore, @fig-rhat provides the Gelman-Rubin diagnostic ($\hat{R}$), confirming that all $\hat{R}$ values are below 1.05. This ensures that the chains have converged and the samples are representative of the posterior distribution.
 
 Additional details about the model and validation processes are provided in Appendix @sec-model-details.
 
 
-# Results
+# Results {#sec-result}
 
-Our results are summarized in .
+### Results
 
-# Discussion
+Our results are summarized in @tbl-modelresults. The findings align well with our expectations regarding the relationships between building characteristics and evaluation scores. To avoid multicollinearity, the model excludes one variable from each category as the reference group: 'WARD' for the ward variable and buildings with fewer than 10 units for the 'CONFIRMED.UNITS' variable. The intercept represents the estimated evaluation score for buildings in 'WARD' with fewer than 10 units, and this baseline score is [Insert Intercept Value Here].
+
+As anticipated, 'YEAR.BUILT' has a positive coefficient, indicating that newer buildings tend to have higher evaluation scores. This suggests that newer buildings, benefiting from modern construction techniques and materials, are generally better maintained or designed to meet higher standards. The positive relationship implies that each additional year of construction is associated with a slight increase in evaluation scores, reflecting the advantages of newer infrastructure.
+
+The number of units in a building ('CONFIRMED.UNITS') also plays a significant role. Buildings with 50–100 units or more than 100 units have higher evaluation scores compared to smaller buildings. The coefficients suggest that larger buildings, likely equipped with better management systems and resources, are better positioned to meet property standards. For instance, buildings with more than 100 units show a larger increase in evaluation scores than those with 50–100 units, further reinforcing the importance of scale in property maintenance.
+
+Geographic location, as captured by 'WARD', exhibits notable variability. Some wards have positive coefficients, indicating higher average evaluation scores compared to the reference ward, while others show negative coefficients, suggesting lower scores. This variability underscores the influence of local factors such as neighborhood policies, inspection practices, or socioeconomic conditions on building evaluations.
+
+@fig-modelresults1 visualizes the 90% credibility intervals for model predictors, offering insights into the certainty of each estimate. Key predictors such as 'YEAR.BUILT', 'CONFIRMED.UNITS', and certain ward effects have credibility intervals that do not overlap zero, indicating strong evidence of their influence on evaluation scores. However, some wards have wider intervals overlapping zero, highlighting uncertainty in their effects.
+
+Together, the results underscore the significant roles of building age, size, and geographic location in determining evaluation scores. These findings suggest that newer, larger buildings in certain wards are better positioned to meet the standards set by the RentSafeTO program. The credibility intervals provide a nuanced understanding of the statistical significance and uncertainty of these predictors.
+
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
+#| label: tbl-modelresults
+#| tbl-cap: "Explanatory model Building Evaluation (n = [Insert Sample Size])"
+
+# Load the saved Bayesian model
+bayesian_model <- readRDS(file = "/cloud/project/model/bayesian_model.rds")
+
+# Generate the model summary table
+modelsummary(
+  list(
+    "Building Evaluation" = bayesian_model
+  ),
+  statistic = "mad",
+)
+
+```
+
+
+# Discussion {#sec-discussion}
 
 ## First discussion point {#sec-first-point}
 
@@ -384,6 +415,36 @@ plot(bayesian_model, "trace", "CONFIRMED.UNITS")
 
 plot(bayesian_model, "rhat")
 ```
+
+
+# 90% Credibility Interval {#sec-credibility-interval}
+
+@fig-modelresults is a 90% credibility interval plot.
+
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
+#| label: fig-modelresults
+#| fig-cap: "90% Credibility Intervals for Building Evaluation Model Predictors"
+
+# Load the saved model
+bayesian_model <- readRDS("/cloud/project/model/bayesian_model.rds")
+
+# Generate 90% credibility interval plot
+modelplot(bayesian_model, conf_level = 0.90, size = 0.2) +
+  labs(
+    x = "90% Credibility Interval",
+    title = "Credible Intervals for Building Evaluation Model Predictors"
+  ) +
+  theme(
+    axis.text.y = element_text(size = 6),
+    axis.title.y = element_blank() # Remove y-axis title for a cleaner look
+  )
+
+```
+
 
 @fig-trace is a trace plot. It shows the sampling paths for key fixed effects, including the intercept, 'YEAR.BUILT', and 'CONFIRMED.UNITS', across all Markov chains. The plots demonstrate good mixing, with chains overlapping and exploring the posterior distribution consistently without any visible drifts or irregular patterns. This suggests that the sampling process converged for these parameters, providing reliable estimates for the posterior distributions.
 
