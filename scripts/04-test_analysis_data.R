@@ -34,8 +34,7 @@ print(unique_wards)
 # Correlation matrix for numerical columns
 numerical_columns <- trt_apt_cleaned %>%
   select(YEAR.BUILT, CONFIRMED.STOREYS, CONFIRMED.UNITS, 
-         CURRENT.BUILDING.EVAL.SCORE, PROACTIVE.BUILDING.SCORE, 
-         CURRENT.REACTIVE.SCORE)
+         CURRENT.BUILDING.EVAL.SCORE)
 correlation_matrix <- cor(numerical_columns, use = "complete.obs")
 print("Correlation matrix:")
 print(correlation_matrix)
@@ -60,8 +59,8 @@ print("Number of apartments built after 2000:")
 print(count_after_2000)
 
 # Test for relationships between categorical variables and Evaluation Score using ANOVA
-anova_result <- aov(CURRENT.BUILDING.EVAL.SCORE ~ WARD, data = trt_apt_cleaned)
-print("ANOVA test for relationship between Ward and Evaluation Score:")
+anova_result <- aov(CURRENT.BUILDING.EVAL.SCORE ~ PROPERTY.TYPE.CODE, data = trt_apt_cleaned)
+print("ANOVA test for relationship between Property Type Code and Evaluation Score:")
 print(summary(anova_result))
 
 # Scatter plot of Year Built vs Evaluation Score

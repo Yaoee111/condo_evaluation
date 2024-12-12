@@ -27,7 +27,7 @@ trt_apt_selected <- trt_apt_filtered %>%
 
 # Create a new column PROPERTY_TYPE_CODE with categorization
 trt_apt_cleaned <- trt_apt_selected %>%
-  mutate(PROPERTY_TYPE_CODE = case_when(
+  mutate(PROPERTY.TYPE.CODE = case_when(
     PROPERTY.TYPE == "PRIVATE" ~ 1,
     PROPERTY.TYPE == "SOCIAL HOUSING" ~ 2,
     PROPERTY.TYPE == "TCHC" ~ 3,

@@ -29,11 +29,11 @@ ggplot(trt_apt, aes(y = YEAR.BUILT)) +
   theme_minimal() +
   labs(title = "Boxplot of Year Built", y = "Year Built")
 
-## Bar plot of Wards
-ggplot(trt_apt, aes(x = WARD)) +
+## Bar plot of PROPERTY.TYPE.CODE
+ggplot(trt_apt, aes(x = PROPERTY.TYPE.CODE)) +
   geom_bar(fill = "lightcoral", color = "black") +
   theme_minimal() +
-  labs(title = "Number of Apartments by Ward", x = "Ward", y = "Count") +
+  labs(title = "Number of Apartments by Property Type", x = "Property Type", y = "Count") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
 # Bivariate Analysis
@@ -43,18 +43,17 @@ ggplot(trt_apt, aes(x = YEAR.BUILT, y = CURRENT.BUILDING.EVAL.SCORE)) +
   theme_minimal() +
   labs(title = "Year Built vs Evaluation Score", x = "Year Built", y = "Evaluation Score")
 
-## Boxplot of Evaluation Score by Ward
-ggplot(trt_apt, aes(x = WARD, y = CURRENT.BUILDING.EVAL.SCORE)) +
+## Boxplot of Evaluation Score by Property Type
+ggplot(trt_apt, aes(x = PROPERTY.TYPE.CODE, y = CURRENT.BUILDING.EVAL.SCORE)) +
   geom_boxplot(fill = "lightblue", color = "black") +
   theme_minimal() +
-  labs(title = "Evaluation Score by Ward", x = "Ward", y = "Evaluation Score") +
+  labs(title = "Evaluation Score by Property Type", x = "Property Type", y = "Evaluation Score") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
 ## Correlation Matrix
 numerical_columns <- trt_apt %>%
   select(YEAR.BUILT, CONFIRMED.STOREYS, 
-         CONFIRMED.UNITS, CURRENT.BUILDING.EVAL.SCORE, PROACTIVE.BUILDING.SCORE, 
-         CURRENT.REACTIVE.SCORE)
+         CONFIRMED.UNITS, CURRENT.BUILDING.EVAL.SCORE)
 correlation_matrix <- cor(numerical_columns, use = "complete.obs")
 print("Correlation matrix:")
 print(correlation_matrix)
