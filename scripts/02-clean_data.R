@@ -17,7 +17,7 @@ trt_apt <- read.csv("data/01-raw_data/raw_apt_data.csv")
 
 # Filter dataset to keep only relevant wards (13) and remove rows with NA in Year.Built
 trt_apt_filtered <- trt_apt %>%
-  filter(WARD %in% c("13"))%>%
+  filter(WARD %in% c("09", "10", "11", "12", "13", "14"))%>%
   filter(!is.na(YEAR.BUILT))
 
 # Select only relevant features for predicting building condition
