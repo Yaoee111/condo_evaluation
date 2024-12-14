@@ -1,4 +1,48 @@
 "RSN","WARD","WARDNAME","YEAR.BUILT","PROPERTY.TYPE","CONFIRMED.STOREYS","CONFIRMED.UNITS","CURRENT.BUILDING.EVAL.SCORE","PROPERTY.TYPE.CODE"
+4168942,"10","Spadina-Fort York",1984,"SOCIAL HOUSING",8,200,87,2
+5228921,"09","Davenport",2021,"PRIVATE",13,152,99,1
+5228929,"09","Davenport",2021,"PRIVATE",10,198,100,1
+4153156,"09","Davenport",1967,"SOCIAL HOUSING",13,112,82,2
+4153160,"09","Davenport",1971,"PRIVATE",15,113,93,1
+4155063,"09","Davenport",1950,"PRIVATE",3,12,77,1
+4155069,"09","Davenport",1959,"PRIVATE",4,28,64,1
+4155068,"09","Davenport",1959,"PRIVATE",4,18,68,1
+4155026,"12","Toronto-St. Paul's",1997,"SOCIAL HOUSING",16,144,75,2
+4153577,"14","Toronto-Danforth",1992,"SOCIAL HOUSING",4,41,78,2
+5361399,"14","Toronto-Danforth",1920,"PRIVATE",3,11,81,1
+4153604,"14","Toronto-Danforth",1929,"PRIVATE",4,48,94,1
+5365973,"14","Toronto-Danforth",1922,"PRIVATE",3,13,90,1
+4153609,"14","Toronto-Danforth",1910,"PRIVATE",3,10,83,1
+4153607,"14","Toronto-Danforth",1968,"PRIVATE",24,291,96,1
+4153608,"14","Toronto-Danforth",1972,"TCHC",8,69,97,3
+4153614,"14","Toronto-Danforth",1929,"PRIVATE",3,39,82,1
+4153613,"14","Toronto-Danforth",1950,"PRIVATE",3,24,88,1
+4261240,"14","Toronto-Danforth",1950,"PRIVATE",3,24,80,1
+4153612,"14","Toronto-Danforth",1950,"PRIVATE",3,31,95,1
+4153619,"14","Toronto-Danforth",1940,"PRIVATE",3,23,93,1
+4153616,"14","Toronto-Danforth",1940,"PRIVATE",4,32,89,1
+4153618,"14","Toronto-Danforth",1960,"PRIVATE",4,21,91,1
+4153617,"14","Toronto-Danforth",1955,"PRIVATE",4,23,99,1
+5405655,"14","Toronto-Danforth",2004,"PRIVATE",3,15,78,1
+4154139,"14","Toronto-Danforth",1969,"PRIVATE",18,110,99,1
+4154140,"14","Toronto-Danforth",1971,"PRIVATE",20,109,94,1
+4154107,"14","Toronto-Danforth",1973,"PRIVATE",4,41,95,1
+4154132,"14","Toronto-Danforth",1970,"PRIVATE",12,134,99,1
+4154137,"14","Toronto-Danforth",1955,"PRIVATE",4,38,98,1
+4155680,"12","Toronto-St. Paul's",1930,"PRIVATE",4,36,84,1
+4153825,"12","Toronto-St. Paul's",1963,"PRIVATE",10,205,89,1
+4153819,"12","Toronto-St. Paul's",1954,"TCHC",4,52,87,3
+5156008,"09","Davenport",1885,"PRIVATE",3,11,93,1
+4156573,"12","Toronto-St. Paul's",1964,"PRIVATE",19,185,93,1
+4153785,"12","Toronto-St. Paul's",1964,"PRIVATE",15,121,85,1
+4153185,"11","University-Rosedale",1960,"PRIVATE",9,63,81,1
+5367995,"11","University-Rosedale",1888,"PRIVATE",3,13,64,1
+4155073,"09","Davenport",1970,"PRIVATE",3,20,81,1
+4155072,"09","Davenport",1960,"PRIVATE",4,28,85,1
+4155074,"09","Davenport",1968,"PRIVATE",4,24,60,1
+4166942,"14","Toronto-Danforth",1967,"PRIVATE",21,275,94,1
+4166944,"14","Toronto-Danforth",1967,"PRIVATE",21,275,96,1
+4153652,"14","Toronto-Danforth",1922,"PRIVATE",4,31,90,1
 4257261,"13","Toronto Centre",1979,"PRIVATE",16,216,85,1
 4153480,"13","Toronto Centre",1994,"SOCIAL HOUSING",12,154,91,2
 4156547,"13","Toronto Centre",2010,"TCHC",12,110,94,3
@@ -6,23 +50,174 @@
 4153476,"13","Toronto Centre",1973,"PRIVATE",23,375,82,1
 4153474,"13","Toronto Centre",1960,"PRIVATE",11,92,92,1
 4153473,"13","Toronto Centre",1988,"SOCIAL HOUSING",4,25,90,2
+4153735,"11","University-Rosedale",1950,"PRIVATE",4,53,99,1
+4245676,"12","Toronto-St. Paul's",1967,"PRIVATE",8,74,94,1
+4153551,"11","University-Rosedale",1915,"PRIVATE",3,21,77,1
+5015812,"11","University-Rosedale",1972,"PRIVATE",51,793,90,1
+4153517,"11","University-Rosedale",1981,"PRIVATE",32,147,88,1
+4153516,"11","University-Rosedale",1977,"PRIVATE",21,250,96,1
+4156154,"10","Spadina-Fort York",1987,"TCHC",15,144,86,3
+4153182,"11","University-Rosedale",1965,"PRIVATE",4,15,90,1
+4155595,"10","Spadina-Fort York",1996,"TCHC",13,115,83,3
 4153423,"13","Toronto Centre",2005,"PRIVATE",28,388,97,1
 4155872,"13","Toronto Centre",1910,"PRIVATE",3,12,97,1
 4153534,"13","Toronto Centre",1910,"PRIVATE",4,35,97,1
+4153144,"10","Spadina-Fort York",1994,"SOCIAL HOUSING",3,18,57,2
+4153373,"12","Toronto-St. Paul's",1929,"PRIVATE",4,49,100,1
+4154942,"12","Toronto-St. Paul's",1955,"PRIVATE",3,19,86,1
+4154941,"12","Toronto-St. Paul's",1937,"PRIVATE",3,18,85,1
+4153157,"11","University-Rosedale",1989,"TCHC",7,157,92,3
+4155728,"11","University-Rosedale",1970,"PRIVATE",3,12,57,1
+4155753,"11","University-Rosedale",1992,"PRIVATE",3,17,96,1
+4153994,"12","Toronto-St. Paul's",1935,"PRIVATE",6,40,86,1
+5241001,"11","University-Rosedale",2022,"PRIVATE",9,61,99,1
+4153150,"11","University-Rosedale",1912,"PRIVATE",3,32,88,1
+4153151,"11","University-Rosedale",1929,"PRIVATE",4,72,84,1
+4153159,"09","Davenport",1930,"PRIVATE",3,43,79,1
+4221299,"09","Davenport",1950,"PRIVATE",3,19,78,1
+4156287,"12","Toronto-St. Paul's",1930,"PRIVATE",3,15,85,1
 4288472,"13","Toronto Centre",2016,"SOCIAL HOUSING",12,145,98,2
+4253901,"14","Toronto-Danforth",1963,"PRIVATE",3,30,94,1
+4154111,"14","Toronto-Danforth",1962,"PRIVATE",22,129,97,1
+4154131,"14","Toronto-Danforth",1965,"PRIVATE",5,26,92,1
+4154130,"14","Toronto-Danforth",1965,"PRIVATE",12,173,97,1
+4154112,"14","Toronto-Danforth",1973,"PRIVATE",12,155,91,1
+4154113,"14","Toronto-Danforth",1968,"PRIVATE",12,118,93,1
+4154129,"14","Toronto-Danforth",1970,"PRIVATE",15,84,98,1
+4154114,"14","Toronto-Danforth",1986,"PRIVATE",11,86,81,1
+4154128,"14","Toronto-Danforth",1961,"PRIVATE",7,140,98,1
+4154115,"14","Toronto-Danforth",1960,"PRIVATE",10,73,95,1
+4883232,"14","Toronto-Danforth",1955,"PRIVATE",3,36,94,1
+5358292,"14","Toronto-Danforth",1950,"PRIVATE",3,24,79,1
+4154103,"14","Toronto-Danforth",1950,"PRIVATE",6,57,86,1
+4154087,"14","Toronto-Danforth",1960,"PRIVATE",4,30,97,1
+4154102,"14","Toronto-Danforth",1956,"PRIVATE",6,48,89,1
+5355436,"14","Toronto-Danforth",1960,"PRIVATE",3,17,81,1
+4154088,"14","Toronto-Danforth",1965,"PRIVATE",15,82,96,1
+4154089,"14","Toronto-Danforth",1958,"PRIVATE",4,29,93,1
+4154101,"14","Toronto-Danforth",1962,"PRIVATE",12,153,93,1
+4154090,"14","Toronto-Danforth",1950,"PRIVATE",6,83,83,1
+4154091,"14","Toronto-Danforth",1965,"PRIVATE",4,30,96,1
+4154092,"14","Toronto-Danforth",1960,"PRIVATE",6,37,88,1
+4154095,"14","Toronto-Danforth",1959,"PRIVATE",6,47,89,1
+4154096,"14","Toronto-Danforth",1965,"PRIVATE",6,45,85,1
+4154093,"14","Toronto-Danforth",1967,"PRIVATE",12,160,86,1
+4154097,"14","Toronto-Danforth",1968,"PRIVATE",4,33,92,1
+4156380,"14","Toronto-Danforth",1965,"PRIVATE",8,95,89,1
+4154098,"14","Toronto-Danforth",1959,"PRIVATE",6,38,98,1
+4155750,"14","Toronto-Danforth",2004,"SOCIAL HOUSING",6,32,87,2
+4154099,"14","Toronto-Danforth",1955,"PRIVATE",6,40,97,1
+4154100,"14","Toronto-Danforth",1927,"PRIVATE",6,40,84,1
+4153638,"14","Toronto-Danforth",1989,"SOCIAL HOUSING",4,14,97,2
+4153657,"14","Toronto-Danforth",1990,"SOCIAL HOUSING",3,11,99,2
+5364517,"14","Toronto-Danforth",1980,"SOCIAL HOUSING",4,91,93,2
+4153412,"11","University-Rosedale",1985,"PRIVATE",3,24,62,1
+4155803,"10","Spadina-Fort York",2012,"TCHC",41,298,85,3
+4153615,"14","Toronto-Danforth",1978,"TCHC",5,131,96,3
+4250590,"14","Toronto-Danforth",2002,"SOCIAL HOUSING",3,26,93,2
+5364483,"14","Toronto-Danforth",1926,"PRIVATE",3,30,74,1
+4153658,"14","Toronto-Danforth",1988,"TCHC",4,109,87,3
+5383946,"14","Toronto-Danforth",1950,"PRIVATE",3,12,85,1
+4153229,"11","University-Rosedale",1980,"TCHC",16,128,89,3
+4257265,"11","University-Rosedale",1969,"PRIVATE",3,26,70,1
+4155594,"11","University-Rosedale",1968,"TCHC",25,460,90,3
+4156719,"11","University-Rosedale",1900,"PRIVATE",4,17,81,1
+4153339,"12","Toronto-St. Paul's",1967,"PRIVATE",5,25,97,1
+5361264,"12","Toronto-St. Paul's",1928,"PRIVATE",3,10,89,1
+4153337,"12","Toronto-St. Paul's",1992,"SOCIAL HOUSING",4,10,79,2
+4153107,"09","Davenport",1978,"TCHC",9,186,88,3
+4153766,"12","Toronto-St. Paul's",1956,"PRIVATE",4,14,84,1
+4153767,"12","Toronto-St. Paul's",1973,"PRIVATE",21,266,99,1
+4171428,"12","Toronto-St. Paul's",1970,"PRIVATE",30,483,92,1
+4244917,"12","Toronto-St. Paul's",2017,"PRIVATE",14,179,100,1
+4153768,"12","Toronto-St. Paul's",1970,"PRIVATE",24,371,96,1
+4153769,"12","Toronto-St. Paul's",1970,"PRIVATE",20,313,96,1
+4153771,"12","Toronto-St. Paul's",1969,"PRIVATE",25,401,92,1
+4153774,"12","Toronto-St. Paul's",1928,"PRIVATE",3,31,86,1
+4153881,"12","Toronto-St. Paul's",1967,"PRIVATE",13,59,89,1
+4153873,"12","Toronto-St. Paul's",1965,"PRIVATE",17,95,98,1
+4153880,"12","Toronto-St. Paul's",1970,"PRIVATE",4,13,94,1
+4253010,"09","Davenport",2007,"SOCIAL HOUSING",3,14,77,2
+4153095,"09","Davenport",1930,"PRIVATE",4,16,87,1
+4153875,"12","Toronto-St. Paul's",1969,"PRIVATE",10,100,96,1
+4153876,"12","Toronto-St. Paul's",1964,"PRIVATE",12,180,92,1
+4153660,"14","Toronto-Danforth",1930,"PRIVATE",4,24,79,1
+4153661,"14","Toronto-Danforth",1985,"SOCIAL HOUSING",5,53,94,2
+4154086,"14","Toronto-Danforth",1986,"TCHC",8,254,94,3
+4154085,"14","Toronto-Danforth",2012,"SOCIAL HOUSING",8,44,97,2
+4250641,"14","Toronto-Danforth",1949,"PRIVATE",3,36,97,1
+4153093,"09","Davenport",1995,"SOCIAL HOUSING",8,134,96,2
+4153147,"10","Spadina-Fort York",1912,"PRIVATE",3,16,89,1
+4327919,"09","Davenport",1960,"PRIVATE",3,18,70,1
+4327922,"09","Davenport",1924,"PRIVATE",3,20,65,1
+4153152,"09","Davenport",1930,"PRIVATE",3,13,63,1
+5368564,"09","Davenport",1940,"PRIVATE",3,11,41,1
+4153166,"09","Davenport",1967,"PRIVATE",20,356,93,1
+4153094,"09","Davenport",2008,"PRIVATE",3,19,91,1
+4155071,"09","Davenport",1960,"PRIVATE",3,29,75,1
+4155070,"09","Davenport",1960,"PRIVATE",3,23,80,1
+4153149,"09","Davenport",1911,"PRIVATE",4,27,87,1
+4153749,"12","Toronto-St. Paul's",1934,"PRIVATE",6,49,89,1
+4153748,"12","Toronto-St. Paul's",1960,"PRIVATE",3,39,93,1
+4153747,"12","Toronto-St. Paul's",1954,"PRIVATE",4,71,82,1
+4153737,"11","University-Rosedale",1955,"PRIVATE",4,28,93,1
+4153115,"09","Davenport",1930,"PRIVATE",3,15,75,1
 5300693,"13","Toronto Centre",2021,"PRIVATE",34,231,100,1
 4153536,"13","Toronto Centre",1928,"PRIVATE",3,35,91,1
 4153535,"13","Toronto Centre",1960,"PRIVATE",11,77,90,1
 4273205,"13","Toronto Centre",1911,"PRIVATE",3,15,79,1
 4153506,"13","Toronto Centre",1940,"PRIVATE",3,27,90,1
 4153530,"13","Toronto Centre",1960,"PRIVATE",11,212,92,1
+5369828,"10","Spadina-Fort York",1926,"PRIVATE",3,10,41,1
+4154117,"14","Toronto-Danforth",1970,"PRIVATE",21,118,99,1
+4154118,"14","Toronto-Danforth",1968,"PRIVATE",11,88,94,1
+4154119,"14","Toronto-Danforth",1966,"PRIVATE",17,121,88,1
+4154116,"14","Toronto-Danforth",1968,"PRIVATE",12,160,98,1
+4153407,"10","Spadina-Fort York",1993,"TCHC",3,11,88,3
+4153409,"10","Spadina-Fort York",1970,"PRIVATE",3,24,75,1
+4153117,"09","Davenport",1993,"SOCIAL HOUSING",4,44,89,2
 4153484,"13","Toronto Centre",1900,"SOCIAL HOUSING",12,50,97,2
+4153556,"10","Spadina-Fort York",1980,"SOCIAL HOUSING",4,32,90,2
+4153554,"10","Spadina-Fort York",1980,"SOCIAL HOUSING",8,135,96,2
+5364536,"11","University-Rosedale",1913,"PRIVATE",3,10,96,1
+4153648,"14","Toronto-Danforth",1989,"TCHC",3,15,94,3
+4155077,"09","Davenport",1960,"PRIVATE",3,29,79,1
+4155076,"09","Davenport",1960,"PRIVATE",3,29,81,1
+4155075,"09","Davenport",1958,"PRIVATE",4,15,99,1
+4153158,"09","Davenport",1905,"PRIVATE",3,18,91,1
+5386632,"12","Toronto-St. Paul's",1946,"PRIVATE",3,30,59,1
+4155887,"12","Toronto-St. Paul's",1959,"PRIVATE",3,35,98,1
+4155919,"12","Toronto-St. Paul's",1959,"PRIVATE",3,35,95,1
+4156294,"12","Toronto-St. Paul's",1959,"PRIVATE",3,37,94,1
+4154932,"12","Toronto-St. Paul's",1975,"PRIVATE",17,81,93,1
+4153353,"12","Toronto-St. Paul's",1956,"PRIVATE",3,29,90,1
+4153385,"10","Spadina-Fort York",1979,"TCHC",6,196,86,3
+4167772,"10","Spadina-Fort York",1980,"TCHC",5,15,78,3
+4155598,"11","University-Rosedale",1978,"TCHC",4,105,86,3
+4153153,"09","Davenport",1925,"PRIVATE",3,31,59,1
+4156229,"11","University-Rosedale",1965,"PRIVATE",24,196,89,1
+4153230,"11","University-Rosedale",1965,"PRIVATE",24,196,88,1
+4155881,"14","Toronto-Danforth",1954,"PRIVATE",4,71,97,1
+4154138,"14","Toronto-Danforth",1953,"PRIVATE",4,44,95,1
+4153606,"14","Toronto-Danforth",1968,"PRIVATE",23,287,97,1
+4233372,"12","Toronto-St. Paul's",1975,"PRIVATE",14,66,94,1
+4156296,"12","Toronto-St. Paul's",1963,"PRIVATE",14,162,95,1
+4156163,"12","Toronto-St. Paul's",1967,"PRIVATE",15,145,87,1
+4286257,"12","Toronto-St. Paul's",1969,"TCHC",4,14,86,3
+4153779,"12","Toronto-St. Paul's",1993,"SOCIAL HOUSING",16,127,91,2
 4153470,"13","Toronto Centre",1940,"PRIVATE",4,67,78,1
 4153598,"13","Toronto Centre",1969,"PRIVATE",24,381,86,1
 4153599,"13","Toronto Centre",1964,"PRIVATE",15,239,94,1
+4153194,"11","University-Rosedale",1920,"PRIVATE",3,24,92,1
+4156449,"11","University-Rosedale",1920,"PRIVATE",3,25,78,1
 4153526,"13","Toronto Centre",1960,"PRIVATE",20,116,96,1
 4153547,"13","Toronto Centre",1915,"PRIVATE",3,26,93,1
 4153548,"13","Toronto Centre",1973,"PRIVATE",29,561,97,1
+4153421,"11","University-Rosedale",1805,"PRIVATE",5,69,87,1
+4153420,"11","University-Rosedale",1903,"PRIVATE",4,18,93,1
+4250554,"11","University-Rosedale",1898,"PRIVATE",4,42,67,1
+4153214,"11","University-Rosedale",1965,"PRIVATE",13,70,100,1
+4153235,"11","University-Rosedale",1918,"PRIVATE",3,15,49,1
 4153531,"13","Toronto Centre",1975,"PRIVATE",27,419,91,1
 4153542,"13","Toronto Centre",1955,"PRIVATE",4,24,91,1
 4153541,"13","Toronto Centre",1960,"PRIVATE",10,84,94,1
@@ -37,6 +232,8 @@
 4153544,"13","Toronto Centre",1959,"PRIVATE",11,262,90,1
 4153521,"13","Toronto Centre",1960,"PRIVATE",9,79,89,1
 4153522,"13","Toronto Centre",1960,"PRIVATE",7,56,95,1
+4153743,"11","University-Rosedale",1969,"PRIVATE",28,267,85,1
+4153744,"12","Toronto-St. Paul's",1967,"PRIVATE",24,411,95,1
 4156725,"13","Toronto Centre",2009,"SOCIAL HOUSING",6,98,97,2
 4156034,"13","Toronto Centre",1994,"TCHC",7,55,86,3
 4153456,"13","Toronto Centre",1929,"PRIVATE",6,72,86,1
@@ -50,10 +247,25 @@
 4153499,"13","Toronto Centre",1991,"TCHC",10,212,77,3
 4153507,"13","Toronto Centre",1888,"PRIVATE",3,16,96,1
 4264285,"13","Toronto Centre",1900,"PRIVATE",3,28,76,1
+4153401,"10","Spadina-Fort York",1979,"TCHC",7,180,91,3
+4153400,"10","Spadina-Fort York",1992,"TCHC",4,26,74,3
+4155021,"12","Toronto-St. Paul's",1971,"PRIVATE",4,35,89,1
+4155020,"12","Toronto-St. Paul's",1971,"PRIVATE",4,39,87,1
+4153338,"12","Toronto-St. Paul's",1987,"SOCIAL HOUSING",7,150,92,2
+4155012,"12","Toronto-St. Paul's",1955,"PRIVATE",6,130,92,1
+4155011,"12","Toronto-St. Paul's",1960,"PRIVATE",6,124,94,1
+4155010,"12","Toronto-St. Paul's",1958,"PRIVATE",5,55,80,1
 4264085,"13","Toronto Centre",1979,"PRIVATE",26,284,95,1
 5156127,"13","Toronto Centre",1972,"PRIVATE",30,240,87,1
 4153479,"13","Toronto Centre",1993,"TCHC",8,72,97,3
+4153639,"14","Toronto-Danforth",1915,"PRIVATE",4,42,87,1
+4153742,"11","University-Rosedale",1986,"PRIVATE",5,25,89,1
+4154972,"12","Toronto-St. Paul's",1930,"PRIVATE",4,40,86,1
 4153462,"13","Toronto Centre",1970,"TCHC",20,340,82,3
+4937758,"11","University-Rosedale",1940,"PRIVATE",10,210,92,1
+4153740,"11","University-Rosedale",1980,"PRIVATE",4,37,54,1
+4235524,"12","Toronto-St. Paul's",1996,"PRIVATE",7,102,89,1
+4153988,"12","Toronto-St. Paul's",1930,"PRIVATE",3,10,70,1
 4153444,"13","Toronto Centre",1986,"TCHC",5,132,77,3
 4153453,"13","Toronto Centre",1939,"PRIVATE",3,16,87,1
 4153461,"13","Toronto Centre",1969,"PRIVATE",33,447,68,1
@@ -63,6 +275,13 @@
 4153581,"13","Toronto Centre",1976,"TCHC",7,81,81,3
 4167701,"13","Toronto Centre",1980,"TCHC",3,12,78,3
 4153579,"13","Toronto Centre",1891,"SOCIAL HOUSING",3,16,92,2
+4269424,"14","Toronto-Danforth",1950,"SOCIAL HOUSING",5,28,84,2
+4153644,"14","Toronto-Danforth",1996,"SOCIAL HOUSING",5,29,93,2
+4153645,"14","Toronto-Danforth",1994,"SOCIAL HOUSING",5,45,96,2
+4153640,"14","Toronto-Danforth",1965,"PRIVATE",3,12,56,1
+5132414,"11","University-Rosedale",2018,"PRIVATE",43,595,97,1
+4171378,"11","University-Rosedale",1973,"PRIVATE",25,225,94,1
+4897867,"11","University-Rosedale",2020,"PRIVATE",32,275,98,1
 4153580,"13","Toronto Centre",1930,"PRIVATE",4,15,93,1
 4153457,"13","Toronto Centre",1995,"SOCIAL HOUSING",15,138,91,2
 4153443,"13","Toronto Centre",1973,"PRIVATE",11,241,72,1
@@ -70,73 +289,511 @@
 4153574,"13","Toronto Centre",1991,"SOCIAL HOUSING",4,29,87,2
 4265577,"13","Toronto Centre",2012,"SOCIAL HOUSING",5,32,85,2
 4250271,"13","Toronto Centre",1991,"SOCIAL HOUSING",4,37,97,2
+4153576,"14","Toronto-Danforth",1973,"TCHC",4,29,97,3
+4155607,"14","Toronto-Danforth",1960,"TCHC",4,81,89,3
+4153148,"09","Davenport",1986,"SOCIAL HOUSING",7,149,89,2
+4153074,"09","Davenport",1911,"PRIVATE",3,12,76,1
+4155590,"09","Davenport",1959,"TCHC",6,106,82,3
+4242360,"09","Davenport",2016,"PRIVATE",8,95,96,1
 4153514,"13","Toronto Centre",1970,"PRIVATE",24,172,89,1
 4153511,"13","Toronto Centre",1968,"PRIVATE",18,107,80,1
 4153512,"13","Toronto Centre",1917,"PRIVATE",5,32,72,1
+4153781,"12","Toronto-St. Paul's",1963,"PRIVATE",15,162,92,1
+4153782,"12","Toronto-St. Paul's",1966,"PRIVATE",30,575,98,1
+4155615,"12","Toronto-St. Paul's",1977,"TCHC",16,156,93,3
+4153195,"11","University-Rosedale",1913,"PRIVATE",3,20,76,1
+5239236,"11","University-Rosedale",2021,"PRIVATE",9,210,98,1
+4255532,"09","Davenport",2006,"PRIVATE",6,171,70,1
+4255546,"09","Davenport",2008,"PRIVATE",5,74,82,1
+4152942,"09","Davenport",1920,"PRIVATE",3,10,48,1
+4155067,"09","Davenport",1967,"PRIVATE",9,90,84,1
 4153502,"13","Toronto Centre",1918,"PRIVATE",4,15,94,1
 4153503,"13","Toronto Centre",1925,"PRIVATE",4,16,76,1
 4153525,"13","Toronto Centre",1929,"PRIVATE",5,39,94,1
 4153524,"13","Toronto Centre",1993,"SOCIAL HOUSING",4,22,95,2
+4154002,"12","Toronto-St. Paul's",1940,"PRIVATE",3,21,81,1
+4153631,"14","Toronto-Danforth",1989,"SOCIAL HOUSING",5,19,94,2
+4153624,"14","Toronto-Danforth",1995,"SOCIAL HOUSING",3,16,92,2
+4153620,"14","Toronto-Danforth",1989,"SOCIAL HOUSING",4,14,95,2
+4153610,"14","Toronto-Danforth",1965,"PRIVATE",24,200,97,1
+4153359,"12","Toronto-St. Paul's",1928,"PRIVATE",6,68,87,1
+4153458,"11","University-Rosedale",2011,"SOCIAL HOUSING",5,50,86,2
+4153801,"12","Toronto-St. Paul's",1981,"TCHC",15,266,91,3
+4153805,"12","Toronto-St. Paul's",1930,"PRIVATE",4,25,81,1
+4153804,"12","Toronto-St. Paul's",1972,"TCHC",10,99,89,3
+4153991,"12","Toronto-St. Paul's",1950,"PRIVATE",3,18,78,1
+4153990,"12","Toronto-St. Paul's",1950,"PRIVATE",3,18,78,1
+4153993,"12","Toronto-St. Paul's",1920,"PRIVATE",3,18,84,1
+4154001,"12","Toronto-St. Paul's",1955,"PRIVATE",3,31,93,1
+4153943,"12","Toronto-St. Paul's",1950,"PRIVATE",4,33,82,1
+4296586,"12","Toronto-St. Paul's",1950,"PRIVATE",4,27,85,1
+4296588,"12","Toronto-St. Paul's",1950,"PRIVATE",4,32,86,1
+4153945,"12","Toronto-St. Paul's",1950,"PRIVATE",3,31,90,1
+4153946,"12","Toronto-St. Paul's",1930,"PRIVATE",3,17,84,1
+4155004,"12","Toronto-St. Paul's",1980,"PRIVATE",7,146,92,1
+4155006,"12","Toronto-St. Paul's",1955,"PRIVATE",4,34,87,1
+4155005,"12","Toronto-St. Paul's",1955,"PRIVATE",3,33,87,1
+4155039,"12","Toronto-St. Paul's",1960,"PRIVATE",3,37,78,1
+4169173,"12","Toronto-St. Paul's",1960,"PRIVATE",3,38,74,1
+4155685,"12","Toronto-St. Paul's",1981,"TCHC",14,300,91,3
+4155031,"12","Toronto-St. Paul's",1960,"PRIVATE",3,41,78,1
+4155066,"09","Davenport",1963,"PRIVATE",3,36,78,1
+4155065,"09","Davenport",1959,"PRIVATE",5,78,89,1
+4289265,"11","University-Rosedale",2011,"SOCIAL HOUSING",17,250,87,2
+4156366,"12","Toronto-St. Paul's",1982,"SOCIAL HOUSING",3,18,94,2
+4153738,"11","University-Rosedale",1957,"PRIVATE",4,66,85,1
+4155959,"11","University-Rosedale",1957,"PRIVATE",4,59,88,1
+4153736,"11","University-Rosedale",1950,"PRIVATE",3,61,85,1
+4153460,"11","University-Rosedale",1985,"TCHC",16,101,85,3
+4153415,"11","University-Rosedale",1961,"PRIVATE",14,120,86,1
+4153413,"11","University-Rosedale",1970,"PRIVATE",15,268,83,1
+4154142,"14","Toronto-Danforth",1945,"PRIVATE",4,38,86,1
+4153143,"10","Spadina-Fort York",1930,"PRIVATE",3,16,71,1
+5358047,"14","Toronto-Danforth",1965,"PRIVATE",3,12,80,1
+5357946,"14","Toronto-Danforth",1965,"PRIVATE",3,12,80,1
+5357890,"14","Toronto-Danforth",1965,"PRIVATE",3,12,85,1
+5361379,"14","Toronto-Danforth",1952,"PRIVATE",3,12,74,1
+4154109,"14","Toronto-Danforth",1992,"SOCIAL HOUSING",6,41,83,2
+4604174,"14","Toronto-Danforth",1952,"PRIVATE",3,12,76,1
+4167455,"10","Spadina-Fort York",2000,"TCHC",7,25,90,3
 4153386,"13","Toronto Centre",1982,"TCHC",3,61,96,3
+5368000,"14","Toronto-Danforth",1950,"PRIVATE",3,12,86,1
+4154133,"14","Toronto-Danforth",1958,"PRIVATE",3,27,91,1
+4154136,"14","Toronto-Danforth",1964,"PRIVATE",12,213,91,1
+4154120,"14","Toronto-Danforth",1960,"PRIVATE",6,75,92,1
+4154121,"14","Toronto-Danforth",1970,"PRIVATE",4,28,89,1
+4154122,"14","Toronto-Danforth",1974,"PRIVATE",6,49,92,1
+4154123,"14","Toronto-Danforth",1960,"PRIVATE",6,49,79,1
+4154124,"14","Toronto-Danforth",1955,"PRIVATE",6,48,86,1
+4154125,"14","Toronto-Danforth",1958,"PRIVATE",4,33,99,1
+4154135,"14","Toronto-Danforth",1964,"PRIVATE",12,212,87,1
+4154126,"14","Toronto-Danforth",1961,"PRIVATE",6,81,100,1
+4154127,"14","Toronto-Danforth",1961,"PRIVATE",6,94,100,1
+4154134,"14","Toronto-Danforth",1965,"PRIVATE",12,152,86,1
+4273164,"14","Toronto-Danforth",1960,"PRIVATE",4,27,83,1
+4250630,"14","Toronto-Danforth",1950,"PRIVATE",3,24,99,1
+4153942,"12","Toronto-St. Paul's",1954,"PRIVATE",6,41,96,1
+4250265,"11","University-Rosedale",1987,"SOCIAL HOUSING",3,45,76,2
+4155787,"14","Toronto-Danforth",2001,"TCHC",11,167,94,3
 4153394,"13","Toronto Centre",1980,"PRIVATE",8,60,98,1
 4156748,"13","Toronto Centre",2009,"TCHC",13,180,89,3
+4155766,"10","Spadina-Fort York",2005,"SOCIAL HOUSING",5,84,94,2
+4153378,"10","Spadina-Fort York",1983,"TCHC",11,150,84,3
+4153142,"10","Spadina-Fort York",1987,"SOCIAL HOUSING",3,50,82,2
+4153334,"12","Toronto-St. Paul's",1993,"SOCIAL HOUSING",4,42,91,2
 4167698,"13","Toronto Centre",1963,"PRIVATE",19,244,97,1
 4167699,"13","Toronto Centre",1963,"PRIVATE",29,217,99,1
 4167700,"13","Toronto Centre",1963,"PRIVATE",18,244,90,1
 4153486,"13","Toronto Centre",1968,"PRIVATE",12,96,72,1
+4156101,"12","Toronto-St. Paul's",1930,"PRIVATE",4,28,91,1
+4156623,"12","Toronto-St. Paul's",1930,"PRIVATE",4,32,86,1
+4153729,"11","University-Rosedale",1984,"TCHC",17,192,89,3
+4153408,"10","Spadina-Fort York",1968,"TCHC",14,257,90,3
+4264915,"11","University-Rosedale",1959,"PRIVATE",11,124,89,1
+4153355,"12","Toronto-St. Paul's",1956,"PRIVATE",8,96,95,1
+4153358,"12","Toronto-St. Paul's",1925,"PRIVATE",4,24,95,1
+4167693,"12","Toronto-St. Paul's",1925,"PRIVATE",3,18,91,1
+4170952,"12","Toronto-St. Paul's",1925,"PRIVATE",3,19,94,1
+4153364,"12","Toronto-St. Paul's",1925,"PRIVATE",4,24,92,1
+4153363,"12","Toronto-St. Paul's",1925,"PRIVATE",4,24,93,1
+4153362,"12","Toronto-St. Paul's",1931,"PRIVATE",6,41,96,1
+4153361,"12","Toronto-St. Paul's",1931,"PRIVATE",6,51,94,1
+4153360,"12","Toronto-St. Paul's",1937,"PRIVATE",6,39,91,1
+4153366,"12","Toronto-St. Paul's",1926,"PRIVATE",4,40,91,1
+4153356,"12","Toronto-St. Paul's",1965,"PRIVATE",8,47,92,1
+4153887,"12","Toronto-St. Paul's",1957,"PRIVATE",13,118,88,1
+4153886,"12","Toronto-St. Paul's",1956,"PRIVATE",13,118,92,1
+4153883,"12","Toronto-St. Paul's",1957,"PRIVATE",14,60,96,1
+4153884,"12","Toronto-St. Paul's",1952,"PRIVATE",12,63,86,1
+4153885,"12","Toronto-St. Paul's",1955,"PRIVATE",11,63,78,1
+4153910,"12","Toronto-St. Paul's",1955,"PRIVATE",11,57,93,1
+4153911,"12","Toronto-St. Paul's",1956,"PRIVATE",3,22,88,1
+4153909,"12","Toronto-St. Paul's",1955,"PRIVATE",11,62,93,1
+4153937,"12","Toronto-St. Paul's",1952,"PRIVATE",4,41,91,1
+4153995,"12","Toronto-St. Paul's",1948,"PRIVATE",3,10,94,1
+4233268,"12","Toronto-St. Paul's",1951,"PRIVATE",3,10,89,1
+4153996,"12","Toronto-St. Paul's",1952,"PRIVATE",4,10,85,1
+4153997,"12","Toronto-St. Paul's",1950,"PRIVATE",3,10,85,1
+4153998,"12","Toronto-St. Paul's",1960,"PRIVATE",3,10,87,1
+4153999,"12","Toronto-St. Paul's",1960,"PRIVATE",3,10,87,1
+4154000,"12","Toronto-St. Paul's",1960,"PRIVATE",3,10,90,1
+4154005,"12","Toronto-St. Paul's",1965,"PRIVATE",4,40,90,1
+4408652,"11","University-Rosedale",1927,"PRIVATE",3,17,77,1
+4153770,"12","Toronto-St. Paul's",1957,"PRIVATE",4,30,65,1
+4153762,"12","Toronto-St. Paul's",1966,"PRIVATE",18,263,100,1
+4244920,"12","Toronto-St. Paul's",2017,"PRIVATE",30,342,100,1
+4153763,"12","Toronto-St. Paul's",1965,"PRIVATE",18,286,97,1
+4153764,"12","Toronto-St. Paul's",1968,"PRIVATE",4,48,92,1
+4153772,"12","Toronto-St. Paul's",1968,"PRIVATE",23,366,99,1
+4153758,"12","Toronto-St. Paul's",1968,"PRIVATE",17,272,89,1
+4153759,"12","Toronto-St. Paul's",1968,"PRIVATE",27,202,88,1
+4245700,"12","Toronto-St. Paul's",1930,"PRIVATE",3,28,91,1
+4245702,"12","Toronto-St. Paul's",1930,"PRIVATE",3,27,93,1
+4153374,"12","Toronto-St. Paul's",1965,"PRIVATE",12,89,92,1
+4155023,"12","Toronto-St. Paul's",1954,"PRIVATE",4,19,89,1
+5368007,"09","Davenport",1905,"TCHC",3,13,74,3
+4153183,"11","University-Rosedale",1919,"PRIVATE",4,18,72,1
+4153184,"11","University-Rosedale",1929,"PRIVATE",4,24,93,1
+4154110,"14","Toronto-Danforth",1927,"PRIVATE",4,50,97,1
+4154108,"14","Toronto-Danforth",1960,"PRIVATE",3,34,77,1
+5046735,"10","Spadina-Fort York",1918,"PRIVATE",6,47,76,1
+5367998,"11","University-Rosedale",1930,"PRIVATE",3,18,83,1
+4288751,"12","Toronto-St. Paul's",1918,"PRIVATE",3,30,90,1
+4153345,"12","Toronto-St. Paul's",1993,"TCHC",5,113,92,3
+4153343,"12","Toronto-St. Paul's",1916,"SOCIAL HOUSING",4,15,79,2
+4154955,"12","Toronto-St. Paul's",1965,"PRIVATE",14,119,95,1
+4154954,"12","Toronto-St. Paul's",1933,"PRIVATE",4,24,83,1
+4154953,"12","Toronto-St. Paul's",1959,"PRIVATE",6,42,93,1
+4154952,"12","Toronto-St. Paul's",1932,"PRIVATE",4,24,92,1
+4154951,"12","Toronto-St. Paul's",1932,"PRIVATE",4,24,84,1
+4154934,"12","Toronto-St. Paul's",1943,"PRIVATE",4,32,83,1
+4154935,"12","Toronto-St. Paul's",1943,"PRIVATE",4,32,95,1
+4250612,"12","Toronto-St. Paul's",1943,"PRIVATE",4,32,91,1
+4153892,"12","Toronto-St. Paul's",1965,"PRIVATE",5,56,96,1
+4154950,"12","Toronto-St. Paul's",1940,"PRIVATE",5,25,80,1
+4154949,"12","Toronto-St. Paul's",1926,"PRIVATE",4,36,90,1
+4154948,"12","Toronto-St. Paul's",1926,"PRIVATE",4,36,88,1
+4154947,"12","Toronto-St. Paul's",1926,"PRIVATE",4,36,89,1
+4154946,"12","Toronto-St. Paul's",1926,"PRIVATE",4,36,87,1
+4155001,"12","Toronto-St. Paul's",1951,"PRIVATE",7,75,84,1
+4155003,"12","Toronto-St. Paul's",1949,"PRIVATE",4,39,64,1
+4154945,"12","Toronto-St. Paul's",1940,"PRIVATE",4,24,92,1
+4154944,"12","Toronto-St. Paul's",1940,"PRIVATE",4,24,89,1
+4156362,"12","Toronto-St. Paul's",1950,"PRIVATE",3,33,73,1
+4154994,"12","Toronto-St. Paul's",1955,"PRIVATE",4,35,85,1
+4154993,"12","Toronto-St. Paul's",1948,"PRIVATE",3,22,88,1
+4154992,"12","Toronto-St. Paul's",1960,"PRIVATE",5,62,92,1
+4154991,"12","Toronto-St. Paul's",1939,"PRIVATE",4,34,86,1
+4154990,"12","Toronto-St. Paul's",1923,"PRIVATE",4,32,90,1
+4153893,"12","Toronto-St. Paul's",1954,"PRIVATE",6,73,83,1
+4154997,"12","Toronto-St. Paul's",1930,"PRIVATE",3,25,96,1
+4155000,"12","Toronto-St. Paul's",1950,"PRIVATE",4,39,83,1
+4154999,"12","Toronto-St. Paul's",1950,"PRIVATE",5,72,93,1
+4154998,"12","Toronto-St. Paul's",1941,"PRIVATE",3,52,86,1
+5355262,"12","Toronto-St. Paul's",1953,"PRIVATE",3,15,83,1
+5386216,"12","Toronto-St. Paul's",1937,"PRIVATE",3,10,58,1
+4171374,"10","Spadina-Fort York",2013,"PRIVATE",29,463,95,1
 4244973,"13","Toronto Centre",2005,"PRIVATE",33,293,98,1
 4156567,"13","Toronto Centre",1979,"PRIVATE",28,265,93,1
+4153145,"09","Davenport",1932,"PRIVATE",4,11,90,1
+4153199,"11","University-Rosedale",2004,"PRIVATE",8,62,86,1
+4153417,"11","University-Rosedale",1885,"SOCIAL HOUSING",3,28,92,2
+4153418,"11","University-Rosedale",1988,"PRIVATE",4,16,69,1
 4264094,"13","Toronto Centre",2013,"PRIVATE",10,177,99,1
+4153234,"11","University-Rosedale",1966,"PRIVATE",11,82,94,1
+4153120,"10","Spadina-Fort York",1987,"TCHC",10,119,82,3
+4156182,"14","Toronto-Danforth",1969,"TCHC",14,190,97,3
 4153585,"13","Toronto Centre",1980,"TCHC",14,260,91,3
 4155834,"13","Toronto Centre",1969,"TCHC",21,301,85,3
 4156118,"13","Toronto Centre",1969,"TCHC",24,327,94,3
 4156038,"13","Toronto Centre",1969,"TCHC",24,327,77,3
+4270170,"11","University-Rosedale",1972,"PRIVATE",25,336,78,1
+4155820,"11","University-Rosedale",1979,"PRIVATE",28,479,88,1
 4153603,"13","Toronto Centre",1948,"PRIVATE",6,41,98,1
+4242011,"11","University-Rosedale",1963,"PRIVATE",14,157,85,1
+4153178,"11","University-Rosedale",1919,"PRIVATE",3,24,55,1
+4153469,"11","University-Rosedale",1980,"TCHC",18,326,93,3
+4221312,"11","University-Rosedale",1970,"PRIVATE",16,170,82,1
+4153170,"11","University-Rosedale",1920,"PRIVATE",3,12,89,1
+4153169,"11","University-Rosedale",1920,"PRIVATE",4,16,90,1
+4250262,"11","University-Rosedale",1989,"SOCIAL HOUSING",4,24,83,2
+4153165,"09","Davenport",1928,"PRIVATE",3,26,58,1
+4153161,"09","Davenport",1926,"PRIVATE",4,11,75,1
+4379646,"09","Davenport",1923,"PRIVATE",3,16,72,1
+4166900,"10","Spadina-Fort York",1987,"PRIVATE",21,289,99,1
+4153124,"10","Spadina-Fort York",1988,"TCHC",6,106,80,3
+4167451,"10","Spadina-Fort York",1990,"TCHC",7,73,82,3
+4154936,"12","Toronto-St. Paul's",1930,"PRIVATE",4,16,90,1
+4154937,"12","Toronto-St. Paul's",1930,"PRIVATE",3,12,87,1
+4154938,"12","Toronto-St. Paul's",1967,"PRIVATE",9,101,85,1
+4154963,"12","Toronto-St. Paul's",1960,"PRIVATE",7,61,85,1
+4154962,"12","Toronto-St. Paul's",1928,"PRIVATE",4,32,68,1
+4154961,"12","Toronto-St. Paul's",1960,"PRIVATE",4,16,96,1
+4154960,"12","Toronto-St. Paul's",1967,"PRIVATE",13,230,84,1
+4154939,"12","Toronto-St. Paul's",1965,"PRIVATE",6,34,93,1
+4154940,"12","Toronto-St. Paul's",1967,"PRIVATE",23,175,86,1
+4154981,"12","Toronto-St. Paul's",1963,"PRIVATE",9,175,89,1
+4152925,"09","Davenport",1994,"TCHC",6,95,92,3
+4285976,"09","Davenport",1992,"TCHC",9,176,94,3
+4152924,"09","Davenport",1992,"TCHC",7,121,92,3
+4153890,"12","Toronto-St. Paul's",1959,"PRIVATE",4,49,86,1
+4153891,"12","Toronto-St. Paul's",1960,"PRIVATE",5,49,94,1
+4153341,"12","Toronto-St. Paul's",1920,"PRIVATE",3,10,79,1
+4153340,"12","Toronto-St. Paul's",1920,"PRIVATE",4,15,89,1
+4153342,"12","Toronto-St. Paul's",1969,"PRIVATE",24,168,100,1
+4153344,"12","Toronto-St. Paul's",1930,"SOCIAL HOUSING",4,19,69,2
+4817599,"12","Toronto-St. Paul's",1900,"PRIVATE",3,15,97,1
+4153348,"12","Toronto-St. Paul's",1920,"PRIVATE",3,16,91,1
+4153347,"12","Toronto-St. Paul's",1989,"PRIVATE",3,14,89,1
+5355064,"12","Toronto-St. Paul's",1956,"PRIVATE",3,12,88,1
+4153349,"12","Toronto-St. Paul's",1982,"SOCIAL HOUSING",7,130,88,2
+4153350,"12","Toronto-St. Paul's",1986,"SOCIAL HOUSING",8,97,94,2
+4153351,"12","Toronto-St. Paul's",1921,"PRIVATE",3,16,94,1
+4153354,"12","Toronto-St. Paul's",1929,"PRIVATE",3,19,71,1
+4620278,"09","Davenport",1929,"PRIVATE",3,18,85,1
+4153114,"09","Davenport",1957,"PRIVATE",3,16,76,1
+4153113,"09","Davenport",1930,"PRIVATE",4,23,88,1
+4153112,"09","Davenport",1930,"PRIVATE",4,24,89,1
+4153111,"09","Davenport",1930,"PRIVATE",4,24,75,1
+4153110,"09","Davenport",1929,"PRIVATE",4,23,76,1
+4155906,"09","Davenport",1940,"PRIVATE",4,11,68,1
+4153116,"09","Davenport",1951,"PRIVATE",3,11,51,1
+4153102,"09","Davenport",1974,"PRIVATE",18,275,81,1
 4153494,"13","Toronto Centre",1927,"PRIVATE",4,45,95,1
 4153493,"13","Toronto Centre",1928,"PRIVATE",4,47,96,1
 4153492,"13","Toronto Centre",1928,"PRIVATE",4,45,89,1
 4153501,"13","Toronto Centre",1965,"PRIVATE",18,102,98,1
 4415833,"13","Toronto Centre",1928,"PRIVATE",3,24,89,1
+4153914,"12","Toronto-St. Paul's",1920,"PRIVATE",4,35,91,1
+4153913,"12","Toronto-St. Paul's",1982,"PRIVATE",11,60,94,1
+4153912,"12","Toronto-St. Paul's",1920,"PRIVATE",4,36,76,1
+4153625,"14","Toronto-Danforth",1996,"SOCIAL HOUSING",4,29,97,2
+4153463,"11","University-Rosedale",1900,"PRIVATE",4,17,69,1
+4153208,"11","University-Rosedale",1960,"PRIVATE",12,130,81,1
+4153209,"11","University-Rosedale",1968,"PRIVATE",7,48,80,1
+4153210,"11","University-Rosedale",1952,"PRIVATE",7,48,87,1
+4153211,"11","University-Rosedale",1962,"PRIVATE",7,48,83,1
+4153223,"11","University-Rosedale",1960,"PRIVATE",7,62,94,1
+4153224,"11","University-Rosedale",1956,"PRIVATE",9,52,90,1
+4153225,"11","University-Rosedale",1964,"PRIVATE",8,58,80,1
+4153226,"11","University-Rosedale",1967,"PRIVATE",10,105,78,1
+4153222,"11","University-Rosedale",1968,"PRIVATE",11,105,63,1
+4153221,"11","University-Rosedale",1957,"PRIVATE",8,68,91,1
+4153220,"11","University-Rosedale",1955,"PRIVATE",9,91,78,1
+4153219,"11","University-Rosedale",1969,"PRIVATE",11,64,87,1
+4153232,"11","University-Rosedale",1958,"PRIVATE",10,63,86,1
+4153237,"11","University-Rosedale",1965,"PRIVATE",9,88,86,1
+4153233,"11","University-Rosedale",1971,"PRIVATE",10,74,76,1
+4153236,"11","University-Rosedale",1967,"PRIVATE",15,85,88,1
 4153518,"13","Toronto Centre",1927,"PRIVATE",4,37,93,1
 4153515,"13","Toronto Centre",1994,"TCHC",5,35,84,3
 4153519,"13","Toronto Centre",1920,"PRIVATE",6,65,86,1
 4286252,"13","Toronto Centre",1980,"TCHC",4,50,95,3
 4153537,"13","Toronto Centre",1965,"PRIVATE",25,260,92,1
+4153399,"10","Spadina-Fort York",1982,"PRIVATE",14,256,82,1
+4286259,"10","Spadina-Fort York",1980,"TCHC",12,54,92,3
+4885483,"11","University-Rosedale",2017,"PRIVATE",26,248,100,1
+4233328,"11","University-Rosedale",1926,"PRIVATE",4,16,91,1
+4156598,"09","Davenport",2011,"SOCIAL HOUSING",18,190,82,2
+4153404,"10","Spadina-Fort York",1923,"TCHC",3,17,83,3
 4167680,"13","Toronto Centre",2006,"TCHC",3,47,81,3
 4167687,"13","Toronto Centre",1948,"TCHC",3,48,81,3
+4153733,"11","University-Rosedale",1950,"PRIVATE",3,19,91,1
+4272882,"11","University-Rosedale",1952,"PRIVATE",3,17,87,1
+4287729,"11","University-Rosedale",1952,"PRIVATE",3,17,85,1
+4153605,"14","Toronto-Danforth",1931,"PRIVATE",4,54,99,1
+4153300,"12","Toronto-St. Paul's",1992,"SOCIAL HOUSING",5,59,94,2
+4155866,"14","Toronto-Danforth",2008,"TCHC",4,56,98,3
+4153992,"12","Toronto-St. Paul's",1928,"PRIVATE",3,29,96,1
+4153989,"12","Toronto-St. Paul's",1940,"PRIVATE",3,33,91,1
+4153402,"10","Spadina-Fort York",1991,"TCHC",11,139,91,3
+4153403,"10","Spadina-Fort York",1966,"PRIVATE",24,284,84,1
+4153659,"14","Toronto-Danforth",1974,"TCHC",14,350,95,3
+4153381,"10","Spadina-Fort York",1983,"TCHC",12,166,91,3
+4153382,"10","Spadina-Fort York",1997,"SOCIAL HOUSING",7,128,87,2
 4153389,"13","Toronto Centre",1993,"SOCIAL HOUSING",9,205,96,2
 4155800,"13","Toronto Centre",1993,"TCHC",7,102,89,3
 4167459,"13","Toronto Centre",2006,"TCHC",7,220,90,3
+4154967,"12","Toronto-St. Paul's",1950,"PRIVATE",4,31,90,1
+4153335,"12","Toronto-St. Paul's",1980,"TCHC",5,37,85,3
+4153753,"12","Toronto-St. Paul's",1980,"TCHC",10,167,85,3
+4153761,"12","Toronto-St. Paul's",1999,"PRIVATE",5,38,96,1
 4286300,"13","Toronto Centre",2005,"SOCIAL HOUSING",3,30,95,2
+4156549,"12","Toronto-St. Paul's",1965,"PRIVATE",16,186,90,1
+4257267,"12","Toronto-St. Paul's",1969,"PRIVATE",14,93,81,1
+4153784,"12","Toronto-St. Paul's",1955,"PRIVATE",4,31,99,1
+4153815,"12","Toronto-St. Paul's",1965,"PRIVATE",17,148,81,1
+4153109,"09","Davenport",1955,"PRIVATE",8,104,99,1
+4156036,"14","Toronto-Danforth",1996,"SOCIAL HOUSING",4,80,90,2
 4153396,"13","Toronto Centre",1990,"TCHC",8,50,80,3
+4153379,"10","Spadina-Fort York",2003,"PRIVATE",10,103,81,1
+4153140,"10","Spadina-Fort York",1970,"PRIVATE",13,525,95,1
+4153905,"12","Toronto-St. Paul's",1962,"PRIVATE",3,32,78,1
 4286254,"13","Toronto Centre",2014,"TCHC",8,128,97,3
+4890985,"10","Spadina-Fort York",2019,"PRIVATE",35,506,94,1
+4153897,"12","Toronto-St. Paul's",1960,"PRIVATE",6,54,94,1
+4153896,"12","Toronto-St. Paul's",1970,"PRIVATE",6,60,89,1
+4153168,"11","University-Rosedale",1930,"PRIVATE",3,24,84,1
+4154084,"14","Toronto-Danforth",1957,"PRIVATE",4,42,90,1
+5364567,"14","Toronto-Danforth",1965,"PRIVATE",3,12,74,1
+4153752,"11","University-Rosedale",1960,"PRIVATE",3,25,82,1
+4153760,"12","Toronto-St. Paul's",1993,"TCHC",8,155,87,3
+4153777,"12","Toronto-St. Paul's",1955,"PRIVATE",3,23,79,1
 4167463,"13","Toronto Centre",2006,"TCHC",3,54,83,3
 4153578,"13","Toronto Centre",1961,"TCHC",3,25,96,3
+4155009,"09","Davenport",1950,"PRIVATE",3,20,75,1
+4654253,"12","Toronto-St. Paul's",2019,"PRIVATE",36,466,93,1
+4155064,"09","Davenport",1960,"PRIVATE",3,17,86,1
+4153820,"12","Toronto-St. Paul's",1968,"PRIVATE",19,145,96,1
+4408389,"09","Davenport",1913,"PRIVATE",3,12,72,1
+4153414,"11","University-Rosedale",1961,"TCHC",6,86,81,3
 4153422,"13","Toronto Centre",1983,"TCHC",11,97,87,3
 4153430,"13","Toronto Centre",1918,"SOCIAL HOUSING",4,20,82,2
 4774556,"13","Toronto Centre",1989,"PRIVATE",3,40,73,1
 4153454,"13","Toronto Centre",1985,"TCHC",15,145,90,3
 4153455,"13","Toronto Centre",1991,"SOCIAL HOUSING",10,42,76,2
+4153798,"12","Toronto-St. Paul's",1928,"PRIVATE",4,56,88,1
+4153799,"12","Toronto-St. Paul's",1989,"PRIVATE",11,81,85,1
+4153826,"12","Toronto-St. Paul's",1961,"PRIVATE",14,211,88,1
+4153800,"12","Toronto-St. Paul's",1973,"PRIVATE",20,129,98,1
+4153802,"12","Toronto-St. Paul's",1963,"PRIVATE",12,125,91,1
+4153822,"12","Toronto-St. Paul's",1964,"PRIVATE",13,228,90,1
+4153803,"12","Toronto-St. Paul's",1964,"PRIVATE",15,83,95,1
+4153821,"12","Toronto-St. Paul's",1963,"PRIVATE",11,91,96,1
 4153602,"13","Toronto Centre",1964,"PRIVATE",15,239,91,1
+4156004,"09","Davenport",1945,"PRIVATE",4,26,66,1
+4156744,"09","Davenport",1945,"PRIVATE",4,26,81,1
+4253806,"11","University-Rosedale",1956,"PRIVATE",4,25,89,1
+4166996,"11","University-Rosedale",1955,"PRIVATE",9,99,93,1
+4154933,"12","Toronto-St. Paul's",1938,"PRIVATE",4,32,83,1
+4250596,"12","Toronto-St. Paul's",1938,"PRIVATE",4,32,94,1
+4154931,"12","Toronto-St. Paul's",1956,"PRIVATE",12,117,89,1
+4250600,"12","Toronto-St. Paul's",1938,"PRIVATE",4,32,81,1
+4250602,"12","Toronto-St. Paul's",1938,"PRIVATE",4,32,93,1
+4233307,"12","Toronto-St. Paul's",1986,"SOCIAL HOUSING",15,174,85,2
+4484430,"14","Toronto-Danforth",1954,"PRIVATE",3,28,90,1
+4154104,"14","Toronto-Danforth",1950,"PRIVATE",3,17,99,1
+4830483,"10","Spadina-Fort York",2019,"PRIVATE",18,501,98,1
 5118732,"13","Toronto Centre",2021,"PRIVATE",29,346,100,1
+4255529,"09","Davenport",1910,"PRIVATE",3,10,82,1
+4155013,"09","Davenport",1930,"PRIVATE",4,46,68,1
+4156003,"12","Toronto-St. Paul's",1969,"PRIVATE",28,216,92,1
+4153745,"12","Toronto-St. Paul's",1969,"PRIVATE",23,245,91,1
+4244932,"12","Toronto-St. Paul's",2015,"PRIVATE",30,251,99,1
+4244947,"12","Toronto-St. Paul's",2014,"PRIVATE",30,336,97,1
+4153622,"14","Toronto-Danforth",1921,"PRIVATE",3,13,81,1
+4155028,"12","Toronto-St. Paul's",1968,"PRIVATE",9,68,91,1
+4155038,"12","Toronto-St. Paul's",1968,"PRIVATE",11,86,81,1
+4155741,"12","Toronto-St. Paul's",2003,"TCHC",7,54,98,3
+4155033,"12","Toronto-St. Paul's",1960,"PRIVATE",6,54,89,1
+5382870,"11","University-Rosedale",1920,"PRIVATE",4,14,95,1
+4153656,"14","Toronto-Danforth",1985,"SOCIAL HOUSING",6,98,89,2
 4156601,"13","Toronto Centre",2010,"TCHC",10,84,95,3
 4156726,"13","Toronto Centre",2012,"SOCIAL HOUSING",4,87,80,2
 4153571,"13","Toronto Centre",1969,"PRIVATE",17,260,54,1
 4155602,"13","Toronto Centre",1972,"TCHC",27,469,87,3
 4155664,"13","Toronto Centre",1972,"PRIVATE",23,327,81,1
+4155008,"09","Davenport",1968,"PRIVATE",19,151,82,1
+5365276,"09","Davenport",1929,"PRIVATE",4,24,55,1
+4155036,"12","Toronto-St. Paul's",1960,"PRIVATE",4,24,91,1
+4153944,"12","Toronto-St. Paul's",1950,"PRIVATE",3,28,90,1
+4229124,"09","Davenport",1955,"PRIVATE",4,29,91,1
+4153155,"09","Davenport",1955,"PRIVATE",4,22,96,1
+4153154,"09","Davenport",1940,"PRIVATE",3,11,82,1
+4153164,"09","Davenport",1968,"PRIVATE",20,226,92,1
+4156290,"09","Davenport",1969,"PRIVATE",16,267,83,1
+4153367,"12","Toronto-St. Paul's",1957,"PRIVATE",4,18,92,1
+4153369,"12","Toronto-St. Paul's",1959,"PRIVATE",4,18,99,1
+4153370,"12","Toronto-St. Paul's",1960,"PRIVATE",7,52,91,1
+4153941,"12","Toronto-St. Paul's",1937,"PRIVATE",5,32,90,1
+4153940,"12","Toronto-St. Paul's",1954,"PRIVATE",5,32,93,1
 4153567,"13","Toronto Centre",1985,"TCHC",3,20,80,3
 4156772,"13","Toronto Centre",2015,"TCHC",9,83,96,3
 4156706,"13","Toronto Centre",2013,"TCHC",10,155,92,3
 4155823,"13","Toronto Centre",2009,"TCHC",8,61,91,3
 4285984,"13","Toronto Centre",2009,"TCHC",22,159,91,3
+4153655,"14","Toronto-Danforth",1983,"SOCIAL HOUSING",8,174,88,2
+4274213,"10","Spadina-Fort York",1986,"TCHC",8,135,90,3
+4156298,"10","Spadina-Fort York",1969,"TCHC",6,40,69,3
+5365981,"12","Toronto-St. Paul's",1960,"PRIVATE",3,16,85,1
+4320792,"12","Toronto-St. Paul's",1975,"PRIVATE",23,173,97,1
+4169241,"12","Toronto-St. Paul's",1928,"PRIVATE",3,15,88,1
+4154966,"12","Toronto-St. Paul's",1963,"PRIVATE",4,40,87,1
+4166819,"12","Toronto-St. Paul's",1991,"SOCIAL HOUSING",11,106,96,2
+4154965,"12","Toronto-St. Paul's",1940,"PRIVATE",4,33,93,1
+4154956,"12","Toronto-St. Paul's",1920,"PRIVATE",4,32,88,1
+5156053,"12","Toronto-St. Paul's",2018,"PRIVATE",9,51,97,1
+4154957,"12","Toronto-St. Paul's",1947,"PRIVATE",3,12,79,1
+4154964,"12","Toronto-St. Paul's",1929,"PRIVATE",4,32,92,1
+4154971,"12","Toronto-St. Paul's",1929,"PRIVATE",3,24,96,1
+4154958,"12","Toronto-St. Paul's",1950,"PRIVATE",4,32,83,1
+4154970,"12","Toronto-St. Paul's",1977,"TCHC",9,99,91,3
+4153336,"12","Toronto-St. Paul's",1983,"TCHC",5,64,94,3
+4153734,"11","University-Rosedale",1969,"PRIVATE",4,36,80,1
+4153078,"09","Davenport",1932,"PRIVATE",5,35,26,1
+4153099,"09","Davenport",1985,"PRIVATE",3,30,75,1
+4155734,"09","Davenport",1992,"PRIVATE",4,138,95,1
+4153101,"09","Davenport",2003,"SOCIAL HOUSING",3,20,98,2
+4153103,"09","Davenport",1973,"PRIVATE",21,352,76,1
+4153947,"12","Toronto-St. Paul's",1967,"PRIVATE",6,42,82,1
 4153565,"13","Toronto Centre",2005,"SOCIAL HOUSING",8,52,93,2
 4153586,"13","Toronto Centre",1880,"PRIVATE",3,13,75,1
 4153595,"13","Toronto Centre",1965,"PRIVATE",19,231,81,1
 4153594,"13","Toronto Centre",1967,"PRIVATE",14,279,76,1
 4153593,"13","Toronto Centre",1967,"PRIVATE",14,279,77,1
+5035608,"10","Spadina-Fort York",2021,"PRIVATE",24,246,99,1
+5035611,"10","Spadina-Fort York",2021,"PRIVATE",31,333,98,1
+4153917,"12","Toronto-St. Paul's",1918,"PRIVATE",4,13,67,1
+4153918,"12","Toronto-St. Paul's",1918,"PRIVATE",3,13,74,1
+4153936,"12","Toronto-St. Paul's",1938,"PRIVATE",4,33,81,1
+4153933,"12","Toronto-St. Paul's",1959,"PRIVATE",3,29,89,1
+4153935,"12","Toronto-St. Paul's",1960,"PRIVATE",5,34,90,1
+4153934,"12","Toronto-St. Paul's",1955,"PRIVATE",4,39,78,1
+4153938,"12","Toronto-St. Paul's",1955,"PRIVATE",9,44,87,1
+4154004,"12","Toronto-St. Paul's",1930,"PRIVATE",3,18,91,1
+4154003,"12","Toronto-St. Paul's",1930,"PRIVATE",3,21,89,1
+4153877,"12","Toronto-St. Paul's",1955,"PRIVATE",8,80,93,1
+4153878,"12","Toronto-St. Paul's",1955,"PRIVATE",4,47,95,1
+4153879,"12","Toronto-St. Paul's",1955,"PRIVATE",4,50,94,1
+4153106,"09","Davenport",1992,"SOCIAL HOUSING",4,13,46,2
 4167685,"13","Toronto Centre",1948,"TCHC",3,48,68,3
+4569135,"14","Toronto-Danforth",1956,"PRIVATE",3,11,95,1
+4154105,"14","Toronto-Danforth",1955,"PRIVATE",4,34,72,1
+4154106,"14","Toronto-Danforth",1950,"PRIVATE",3,26,90,1
+4153559,"10","Spadina-Fort York",1982,"TCHC",9,251,91,3
+4154969,"12","Toronto-St. Paul's",1960,"PRIVATE",4,27,86,1
+4154959,"12","Toronto-St. Paul's",1955,"PRIVATE",3,12,84,1
+4154968,"12","Toronto-St. Paul's",1983,"TCHC",7,51,92,3
+4154985,"12","Toronto-St. Paul's",1920,"PRIVATE",3,24,92,1
+4154974,"12","Toronto-St. Paul's",1929,"SOCIAL HOUSING",4,29,89,2
+4154984,"12","Toronto-St. Paul's",1955,"PRIVATE",4,22,76,1
+4154975,"12","Toronto-St. Paul's",1955,"PRIVATE",4,16,87,1
+4154983,"12","Toronto-St. Paul's",1952,"PRIVATE",4,22,68,1
+4154976,"12","Toronto-St. Paul's",1920,"PRIVATE",4,32,92,1
+4154977,"12","Toronto-St. Paul's",1955,"PRIVATE",6,42,82,1
+4156441,"12","Toronto-St. Paul's",2009,"SOCIAL HOUSING",3,30,82,2
+4154979,"12","Toronto-St. Paul's",1930,"PRIVATE",3,46,81,1
+5156112,"12","Toronto-St. Paul's",1958,"PRIVATE",4,25,80,1
+4154982,"12","Toronto-St. Paul's",1955,"PRIVATE",6,31,95,1
+4154980,"12","Toronto-St. Paul's",1927,"PRIVATE",4,24,90,1
+4154987,"12","Toronto-St. Paul's",1938,"PRIVATE",4,24,81,1
+4154988,"12","Toronto-St. Paul's",1926,"PRIVATE",4,52,80,1
+4154989,"12","Toronto-St. Paul's",1934,"PRIVATE",4,24,93,1
+4154986,"12","Toronto-St. Paul's",1952,"PRIVATE",5,79,91,1
+4154996,"12","Toronto-St. Paul's",1940,"PRIVATE",3,33,96,1
+4155022,"12","Toronto-St. Paul's",1957,"PRIVATE",7,97,88,1
+4155035,"12","Toronto-St. Paul's",1955,"PRIVATE",4,45,84,1
+4155024,"12","Toronto-St. Paul's",1957,"PRIVATE",4,23,84,1
+4155029,"12","Toronto-St. Paul's",1977,"PRIVATE",4,38,86,1
+4155030,"12","Toronto-St. Paul's",1966,"PRIVATE",8,106,75,1
+5371451,"12","Toronto-St. Paul's",1990,"SOCIAL HOUSING",16,210,79,2
+4153406,"10","Spadina-Fort York",1993,"TCHC",3,20,71,3
+4153928,"12","Toronto-St. Paul's",1957,"PRIVATE",17,157,92,1
+4153929,"12","Toronto-St. Paul's",1957,"PRIVATE",17,157,92,1
+4153930,"12","Toronto-St. Paul's",1957,"PRIVATE",17,173,93,1
+4153931,"12","Toronto-St. Paul's",1957,"PRIVATE",18,235,92,1
+4153932,"12","Toronto-St. Paul's",1957,"PRIVATE",17,235,95,1
+4155034,"12","Toronto-St. Paul's",1965,"PRIVATE",10,129,83,1
+4153419,"11","University-Rosedale",1979,"TCHC",5,189,90,3
+4155900,"11","University-Rosedale",1895,"PRIVATE",4,11,69,1
+4153939,"12","Toronto-St. Paul's",1955,"PRIVATE",3,32,96,1
+4153171,"11","University-Rosedale",1904,"PRIVATE",4,32,85,1
+4153464,"11","University-Rosedale",1932,"PRIVATE",3,10,79,1
+4153465,"11","University-Rosedale",1907,"PRIVATE",3,11,65,1
+4153172,"11","University-Rosedale",1911,"PRIVATE",4,21,95,1
+4153628,"14","Toronto-Danforth",1988,"SOCIAL HOUSING",5,77,99,2
+4288772,"14","Toronto-Danforth",1996,"SOCIAL HOUSING",5,60,88,2
+4153646,"14","Toronto-Danforth",1981,"TCHC",8,139,94,3
+4273905,"14","Toronto-Danforth",1930,"PRIVATE",3,17,92,1
+4153650,"14","Toronto-Danforth",1990,"PRIVATE",3,15,54,1
+4153621,"14","Toronto-Danforth",1995,"SOCIAL HOUSING",3,17,83,2
 4155604,"13","Toronto Centre",1961,"TCHC",6,25,81,3
 4575691,"13","Toronto Centre",2018,"PRIVATE",51,503,100,1
+4153138,"10","Spadina-Fort York",1989,"SOCIAL HOUSING",9,200,76,2
+4155840,"11","University-Rosedale",1966,"SOCIAL HOUSING",3,32,88,2
+4250622,"11","University-Rosedale",1913,"PRIVATE",3,22,87,1
+4153196,"11","University-Rosedale",1900,"PRIVATE",3,16,66,1
+4153730,"11","University-Rosedale",1954,"PRIVATE",7,39,88,1
 4155600,"13","Toronto Centre",1973,"TCHC",16,301,92,3
 4155809,"13","Toronto Centre",1975,"PRIVATE",17,371,99,1
 4153434,"13","Toronto Centre",1978,"TCHC",7,174,83,3
@@ -147,6 +804,8 @@
 5258798,"13","Toronto Centre",1888,"PRIVATE",3,17,90,1
 4153601,"13","Toronto Centre",1969,"PRIVATE",22,568,99,1
 4153600,"13","Toronto Centre",1964,"PRIVATE",15,239,82,1
+4153231,"11","University-Rosedale",1972,"SOCIAL HOUSING",7,96,81,2
+4155591,"09","Davenport",1968,"TCHC",17,352,79,3
 4479218,"13","Toronto Centre",1951,"PRIVATE",3,12,77,1
 4153448,"13","Toronto Centre",1990,"SOCIAL HOUSING",3,15,76,2
 4153435,"13","Toronto Centre",1896,"PRIVATE",4,16,82,1
@@ -155,6 +814,8 @@
 4153436,"13","Toronto Centre",1885,"PRIVATE",3,19,89,1
 4153445,"13","Toronto Centre",1973,"PRIVATE",11,102,88,1
 5156142,"13","Toronto Centre",1889,"PRIVATE",4,20,82,1
+4155593,"11","University-Rosedale",1964,"TCHC",3,54,83,3
+4153775,"12","Toronto-St. Paul's",1930,"PRIVATE",3,26,77,1
 4153569,"13","Toronto Centre",1988,"SOCIAL HOUSING",6,60,86,2
 4153573,"13","Toronto Centre",1975,"TCHC",7,200,91,3
 4153442,"13","Toronto Centre",1955,"PRIVATE",4,23,97,1
@@ -177,19 +838,104 @@
 4333382,"13","Toronto Centre",1978,"PRIVATE",30,292,97,1
 4333386,"13","Toronto Centre",2018,"PRIVATE",43,369,98,1
 4333391,"13","Toronto Centre",1978,"PRIVATE",30,514,82,1
+4153739,"11","University-Rosedale",1950,"PRIVATE",4,34,87,1
+4153077,"09","Davenport",1966,"PRIVATE",7,68,90,1
+4221280,"11","University-Rosedale",1965,"PRIVATE",18,131,91,1
+4153173,"11","University-Rosedale",1965,"PRIVATE",7,63,100,1
+4153174,"11","University-Rosedale",1970,"PRIVATE",10,78,83,1
+4153181,"11","University-Rosedale",1960,"PRIVATE",8,71,83,1
+4153175,"11","University-Rosedale",1955,"PRIVATE",4,38,80,1
+4153180,"11","University-Rosedale",1960,"PRIVATE",3,40,74,1
+4153179,"11","University-Rosedale",1971,"PRIVATE",10,61,87,1
+4153189,"11","University-Rosedale",1966,"PRIVATE",15,174,83,1
+4153188,"11","University-Rosedale",1961,"PRIVATE",4,33,74,1
+4153187,"11","University-Rosedale",1960,"PRIVATE",13,85,85,1
+4153186,"11","University-Rosedale",1958,"PRIVATE",4,35,84,1
+4221313,"11","University-Rosedale",1920,"PRIVATE",4,10,73,1
+4154930,"12","Toronto-St. Paul's",1964,"PRIVATE",25,547,90,1
+4154929,"12","Toronto-St. Paul's",1960,"PRIVATE",15,171,89,1
+4153919,"12","Toronto-St. Paul's",1928,"PRIVATE",4,15,96,1
+4153372,"12","Toronto-St. Paul's",1965,"PRIVATE",7,49,93,1
+4153888,"12","Toronto-St. Paul's",1963,"PRIVATE",5,79,87,1
+4153916,"12","Toronto-St. Paul's",1927,"PRIVATE",3,19,82,1
+4153915,"12","Toronto-St. Paul's",1915,"PRIVATE",3,20,89,1
+4153922,"12","Toronto-St. Paul's",1929,"PRIVATE",4,12,87,1
+4153920,"12","Toronto-St. Paul's",1930,"PRIVATE",3,24,85,1
+4153923,"12","Toronto-St. Paul's",1959,"PRIVATE",10,87,95,1
+4153924,"12","Toronto-St. Paul's",1965,"PRIVATE",7,60,90,1
+4153925,"12","Toronto-St. Paul's",1934,"PRIVATE",5,46,91,1
+4250636,"12","Toronto-St. Paul's",1957,"PRIVATE",13,152,89,1
+4153926,"12","Toronto-St. Paul's",1962,"PRIVATE",12,122,93,1
+4153921,"12","Toronto-St. Paul's",1955,"PRIVATE",4,42,97,1
+4153927,"12","Toronto-St. Paul's",1960,"PRIVATE",9,48,93,1
+4153416,"11","University-Rosedale",1960,"SOCIAL HOUSING",6,77,86,2
+4155609,"14","Toronto-Danforth",1970,"TCHC",3,34,85,3
+4155756,"12","Toronto-St. Paul's",1927,"PRIVATE",3,11,58,1
+4154973,"12","Toronto-St. Paul's",1925,"PRIVATE",3,11,54,1
+4153746,"12","Toronto-St. Paul's",1969,"PRIVATE",32,163,92,1
+4284996,"12","Toronto-St. Paul's",1969,"PRIVATE",32,163,92,1
+4153375,"12","Toronto-St. Paul's",1959,"PRIVATE",10,59,87,1
+4153377,"10","Spadina-Fort York",2005,"PRIVATE",10,232,92,1
+4153380,"10","Spadina-Fort York",1991,"SOCIAL HOUSING",4,46,85,2
+4153207,"11","University-Rosedale",1968,"PRIVATE",23,193,83,1
+4153213,"11","University-Rosedale",1968,"PRIVATE",19,149,85,1
 4153560,"13","Toronto Centre",1994,"SOCIAL HOUSING",10,82,81,2
 4153592,"13","Toronto Centre",1910,"PRIVATE",4,15,68,1
 4153395,"13","Toronto Centre",1900,"SOCIAL HOUSING",7,76,88,2
 4153566,"13","Toronto Centre",1984,"TCHC",6,44,98,3
+4153552,"14","Toronto-Danforth",1988,"SOCIAL HOUSING",3,36,85,2
 4153431,"13","Toronto Centre",1983,"SOCIAL HOUSING",10,77,92,2
 4155601,"13","Toronto Centre",1964,"TCHC",16,299,93,3
 4156181,"13","Toronto Centre",1964,"TCHC",15,300,80,3
 4156250,"13","Toronto Centre",1964,"TCHC",16,300,84,3
+4153397,"10","Spadina-Fort York",1991,"TCHC",12,53,93,3
+5348106,"10","Spadina-Fort York",2021,"PRIVATE",26,440,100,1
+5175953,"10","Spadina-Fort York",2022,"PRIVATE",36,286,100,1
+4915028,"11","University-Rosedale",2021,"PRIVATE",16,166,99,1
+4153467,"11","University-Rosedale",1971,"PRIVATE",24,334,94,1
+4153468,"11","University-Rosedale",1959,"PRIVATE",7,62,85,1
+4153176,"11","University-Rosedale",1972,"SOCIAL HOUSING",6,103,97,2
+4155858,"11","University-Rosedale",1905,"PRIVATE",4,24,77,1
 4153488,"13","Toronto Centre",1979,"PRIVATE",9,47,95,1
 4153513,"13","Toronto Centre",1929,"PRIVATE",5,60,68,1
 4153496,"13","Toronto Centre",1926,"PRIVATE",4,30,89,1
 4153510,"13","Toronto Centre",1963,"PRIVATE",12,76,94,1
 4153497,"13","Toronto Centre",1965,"PRIVATE",8,88,79,1
+4153553,"14","Toronto-Danforth",1987,"SOCIAL HOUSING",4,15,94,2
+4156548,"12","Toronto-St. Paul's",2010,"PRIVATE",10,141,95,1
+4155730,"09","Davenport",2010,"PRIVATE",14,291,89,1
+4155710,"09","Davenport",2005,"PRIVATE",9,116,90,1
+4153630,"14","Toronto-Danforth",1927,"PRIVATE",4,21,90,1
+4288768,"14","Toronto-Danforth",1967,"SOCIAL HOUSING",22,159,87,2
+5207679,"12","Toronto-St. Paul's",2022,"PRIVATE",20,177,100,1
+4153901,"12","Toronto-St. Paul's",1927,"PRIVATE",4,15,88,1
+4153908,"12","Toronto-St. Paul's",1925,"PRIVATE",4,14,88,1
+4153902,"12","Toronto-St. Paul's",1927,"PRIVATE",4,19,91,1
+4153903,"12","Toronto-St. Paul's",1923,"PRIVATE",4,10,92,1
+4153904,"12","Toronto-St. Paul's",1923,"PRIVATE",4,32,75,1
+4153907,"12","Toronto-St. Paul's",1920,"PRIVATE",5,12,88,1
+4153906,"12","Toronto-St. Paul's",1930,"PRIVATE",4,20,100,1
+4153900,"12","Toronto-St. Paul's",1957,"PRIVATE",6,36,91,1
+4153894,"12","Toronto-St. Paul's",1970,"PRIVATE",6,55,89,1
+4153632,"14","Toronto-Danforth",1993,"TCHC",4,51,74,3
+4153633,"14","Toronto-Danforth",1993,"SOCIAL HOUSING",5,177,94,2
+4153626,"14","Toronto-Danforth",1995,"TCHC",5,40,92,3
+4153623,"14","Toronto-Danforth",1988,"SOCIAL HOUSING",4,34,90,2
+4153637,"14","Toronto-Danforth",1990,"SOCIAL HOUSING",4,25,67,2
+5365992,"14","Toronto-Danforth",1948,"PRIVATE",3,31,84,1
+4255628,"11","University-Rosedale",2007,"PRIVATE",8,55,92,1
+4153217,"11","University-Rosedale",1957,"PRIVATE",10,57,78,1
+4153190,"11","University-Rosedale",1965,"PRIVATE",11,75,87,1
+4153192,"11","University-Rosedale",1963,"PRIVATE",11,157,92,1
+4155901,"11","University-Rosedale",2009,"PRIVATE",5,91,89,1
+4167462,"11","University-Rosedale",1969,"PRIVATE",23,216,84,1
+4155731,"12","Toronto-St. Paul's",1967,"PRIVATE",22,141,95,1
+4153895,"12","Toronto-St. Paul's",1931,"PRIVATE",4,31,80,1
+4153899,"12","Toronto-St. Paul's",1935,"PRIVATE",4,32,85,1
+4153898,"12","Toronto-St. Paul's",1929,"PRIVATE",4,24,78,1
+4218633,"12","Toronto-St. Paul's",1967,"PRIVATE",20,185,97,1
+4153750,"12","Toronto-St. Paul's",1970,"PRIVATE",27,307,89,1
+4153751,"11","University-Rosedale",1955,"PRIVATE",4,36,42,1
 4153509,"13","Toronto Centre",1960,"PRIVATE",8,71,91,1
 4153498,"13","Toronto Centre",1960,"PRIVATE",7,61,93,1
 4153508,"13","Toronto Centre",1968,"PRIVATE",28,427,89,1
@@ -204,7 +950,31 @@
 4240826,"13","Toronto Centre",1968,"PRIVATE",29,554,79,1
 4240827,"13","Toronto Centre",1968,"PRIVATE",32,565,96,1
 4155952,"13","Toronto Centre",1969,"PRIVATE",32,571,88,1
+5346159,"10","Spadina-Fort York",2023,"PRIVATE",13,171,99,1
+5353316,"10","Spadina-Fort York",2023,"PRIVATE",13,160,98,1
+4155014,"09","Davenport",1952,"PRIVATE",3,29,71,1
+4155015,"09","Davenport",1952,"PRIVATE",3,29,70,1
+4155016,"09","Davenport",1952,"PRIVATE",3,29,75,1
+4155019,"09","Davenport",1950,"PRIVATE",3,29,75,1
+4155017,"09","Davenport",1953,"PRIVATE",3,30,88,1
+4156711,"10","Spadina-Fort York",2013,"PRIVATE",8,179,91,1
 4156712,"13","Toronto Centre",2014,"TCHC",8,128,85,3
+4153212,"11","University-Rosedale",1955,"PRIVATE",8,44,86,1
+5392310,"11","University-Rosedale",1930,"PRIVATE",3,17,88,1
+4408585,"11","University-Rosedale",1948,"PRIVATE",3,26,78,1
+4153215,"11","University-Rosedale",1989,"TCHC",4,12,97,3
+5033221,"11","University-Rosedale",1890,"PRIVATE",3,11,77,1
+4793995,"11","University-Rosedale",1896,"PRIVATE",4,12,85,1
+4153218,"11","University-Rosedale",1907,"PRIVATE",3,17,90,1
+5186997,"12","Toronto-St. Paul's",2019,"PRIVATE",6,82,99,1
 4153487,"13","Toronto Centre",1923,"PRIVATE",3,37,99,1
 4332678,"13","Toronto Centre",1920,"PRIVATE",4,27,97,1
 4153495,"13","Toronto Centre",1909,"PRIVATE",4,27,97,1
+4155681,"10","Spadina-Fort York",1996,"SOCIAL HOUSING",3,22,81,2
+4153146,"09","Davenport",1915,"PRIVATE",3,25,45,1
+4153376,"10","Spadina-Fort York",1987,"PRIVATE",19,228,99,1
+4153357,"12","Toronto-St. Paul's",1930,"PRIVATE",7,34,94,1
+4153874,"12","Toronto-St. Paul's",1937,"PRIVATE",6,97,77,1
+4169264,"12","Toronto-St. Paul's",1926,"PRIVATE",4,25,92,1
+4153882,"12","Toronto-St. Paul's",1938,"PRIVATE",9,54,79,1
+4153889,"12","Toronto-St. Paul's",1970,"PRIVATE",4,45,92,1
