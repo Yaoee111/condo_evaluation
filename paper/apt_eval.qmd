@@ -20,10 +20,11 @@ bibliography: references.bib
 
 library(tidyverse)
 library(knitr)
-library(kableExtra)
 library(rstanarm)
-library(modelsummary)
-library(tidybayes)
+library(sjPlot)
+library(ggplot2)
+library(patchwork)
+library(ggdist)
 ```
 
 ```{r}
@@ -56,7 +57,7 @@ The estimand in this paper is the evaluation score of apartment buildings as a m
 
 # Data {#sec-data}
 
-We use the statistical programming language R [@citeR] with packages `tidyverse` [citeTidyverse], , `rstanarm` [@rstanarm], `modelsummary` [@citeModleSummary], `knitr` [@citeKnitr], `kableExtra` [@citeKableExtra], `tidybayes` [@tidybayes], and follow @tellingstories.
+We use the statistical programming language R [@citeR] with packages `tidyverse` [@citeTidyverse], , `rstanarm` [@rstanarm], `knitr` [@citeKnitr], `tidybayes` [@tidybayes], `ggplot2` [@citeggplot2], `sjPlot` [@citesjPlot], `patchwork` [@citepatchwork], `ggdist` [@citeggdist], and follow @tellingstories.
 
 ## Data source
 
@@ -64,7 +65,7 @@ Data for this research comes from RentSafeTO program provided by Open Data Toron
 
 ## Data Features
 
-The original RentSafeTo dataset, which shows in \@ in Appendix @sec-data-details, contains 3573 data entries and many variables. Since we only interested in data in downtown Toronto, this report will only explore and analyze through several data features. We chose these 10 variables: RSN, WARD, WARDNAME, YEAR.BUILT, PROPERTY.TYPE, CONFIRMED.STOREYS, CONFIRMED.UNITS, CURRENT.BUILDING.EVAL.SCORE, PROACTIVE.BUILDING.SCORE, CURRENT.REACTIVE.SCORE. Details of these selected variables are in @tbl-feature. We could use such features to predict building condition in downtown Toronto.
+The original RentSafeTo dataset, which shows in Appendix @sec-data-details, contains 3573 data entries and many variables. Since we only interested in data in downtown Toronto, this report will only explore and analyze through several data features. We chose these 8 variables: RSN, WARD, WARDNAME, YEAR.BUILT, PROPERTY.TYPE, CONFIRMED.STOREYS, CONFIRMED.UNITS, CURRENT.BUILDING.EVAL.SCORE. Details of these selected variables are also in @sec-data-details. We could use such features to predict building condition in downtown Toronto.
 
 ## Data Measurement
 
@@ -84,7 +85,7 @@ The original dataset contains information on all registered apartment buildings 
 
 @fig-data1 illustrates the relationship between CURRENT.BUILDING.EVAL.SCORE and YEAR.BUILT. Each point represents a building, with its year of construction on the x-axis and its evaluation score on the y-axis. The plot includes a trend line generated through linear regression to highlight any general trends. The positive trend line suggests that buildings constructed more recently tend to have slightly higher evaluation scores, although the relationship is not very strong. This could indicate that newer buildings are generally better maintained or constructed to meet higher standards. However, there is considerable variability in the scores for buildings of all ages, as shown by the spread of points around the trend line.
 
-Outliers in the older buildings with high scores could reflect cases where older properties have been well-maintained or renovated. Conversely, some newer buildings with lower scores might indicate specific issues despite their recent construction. This graph highlights the importance of maintenance and management practices in addition to construction year.
+Outliers in the older buildings with high scores could reflect cases where older properties have been well-maintained or renovated. Conversely, some newer buildings with lower scores might indicate specific issues despite their recent construction.
 
 ```{r}
 #| label: fig-data1
@@ -121,64 +122,126 @@ ggplot(data, aes(x = PROPERTY.TYPE, y = CURRENT.BUILDING.EVAL.SCORE)) +
   )
 ```
 
-@fig-data3 shows the relationship between CURRENT.BUILDING.EVAL.SCORE and CONFIRMED.UNITS. The x-axis represents the number of units in a building, while the y-axis shows the evaluation score. A regression trend line is included to illustrate any patterns in the data. The line shows a slight upward trend, suggesting that buildings with more units tend to have marginally higher evaluation scores. This could indicate that larger buildings might have more structured management systems, leading to better maintenance and compliance. There is a significant spread of scores across all building sizes, with no strong clustering or consistency. This suggests that the number of units alone does not strongly predict evaluation scores, and other factors, such as management quality or age of the building, might play a more prominent role. A few buildings with lower scores, regardless of their number of units, could highlight individual cases where maintenance or compliance was poor, despite size advantages.
+@fig-data3 explores the relationships between building evaluation scores, the number of units, and the number of storeys in Toronto apartment buildings. Graph A illustrates the relationship between the evaluation score and the number of units in a building, while Graph B highlights the relationship between the evaluation score and the number of storeys.
 
-While larger buildings may have slightly better evaluation scores on average, the overall variability indicates that the size of a building is not a decisive factor in determining its condition or compliance. This suggests the need for a more nuanced analysis considering additional variables.
+Graph A shows a general trend in the relationship between the number of units and evaluation scores. Buildings with more units tend to have a wide range of scores, suggesting that the number of units alone does not directly predict a building's quality or condition. However, there are clusters of higher scores associated with moderate unit counts, which might indicate a balance between resource allocation and maintenance efforts in mid-sized buildings. The linear regression line provides an overview of the trend, but the scatter suggests considerable variability, indicating other factors may also play significant roles in determining building scores.
+
+Graph B examines the relationship between the number of storeys and building evaluation scores. Buildings with fewer storeys generally display consistent scores, often in the higher range, likely due to simpler maintenance and construction dynamics. Conversely, taller buildings show more variability in scores, with some achieving high evaluations while others fall significantly lower. The regression line suggests a modest trend, but, similar to the first graph, the data points indicate substantial variability within different building heights.
+
+Together, @fig-data3 highlight key patterns in how building size, as measured by units and storeys, relates to evaluation scores. While larger and taller buildings often exhibit more variability in their scores, mid-sized and low-rise buildings show more consistent evaluations. These findings suggest that building design and scale may influence maintenance practices and quality assessments.
 
 ```{r}
 #| label: fig-data3
-#| tbl-cap: "Relationship between Evaluation Score and Number of Units"
+#| tbl-cap: "Relationships Between Evaluation Score, Units, and Storeys"
 #| message: false
 #| echo: false
 #| warning: false
 
-ggplot(data, aes(x = CONFIRMED.UNITS, y = CURRENT.BUILDING.EVAL.SCORE)) +
-  geom_point() +
-  geom_smooth(method = "lm", col = "red") +
+# Graph 1: Relationship between Score and Units
+plot_units <- ggplot(data, aes(x = CONFIRMED.UNITS, y = CURRENT.BUILDING.EVAL.SCORE)) +
+  geom_point(alpha = 0.7, color = "blue") +
+  geom_smooth(method = "lm", formula = y ~ x, col = "red") +
   labs(
+    title = "A. Evaluation Score and Units",
     x = "Number of Units",
-    y = "Current Building Evaluation Score"
+    y = "Evaluation Score"
+  ) +
+  theme_minimal()
+
+# Graph 2: Relationship between Score and Storeys
+plot_storeys <- ggplot(data, aes(x = CONFIRMED.STOREYS, y = CURRENT.BUILDING.EVAL.SCORE)) +
+  geom_point(alpha = 0.7, color = "green") +
+  geom_smooth(method = "lm", formula = y ~ x, col = "red") +
+  labs(
+    title = "B. Evaluation Score and Storeys",
+    x = "Number of Storeys",
+    y = "Evaluation Score"
+  ) +
+  theme_minimal()
+
+# Combine the two graphs with patchwork
+combined_plot <- plot_units + plot_storeys +
+  plot_layout(ncol = 2) +
+  plot_annotation(
+    theme = theme(plot.title = element_text(hjust = 0.5))
   )
+
+# Print the combined plot
+combined_plot
+
 ```
 
+
+@fig-data4 shows the distribution of current building evaluation scores across six wards in Toronto, represented by their respective numbers on the x-axis. Each ward corresponds to a specific area: Ward 9 (Davenport), Ward 10 (Spadina-Fort York), Ward 11 (University-Rosedale), Ward 12 (Toronto-St. Paul's), Ward 13 (Toronto Centre), and Ward 14 (Toronto-Danforth). The y-axis represents the evaluation scores, providing insights into the quality or condition of buildings in each ward.
+
+Wards such as Spadina-Fort York (10) and Toronto Centre (13) show relatively higher median scores, suggesting overall better building conditions compared to wards like Davenport (9), which has a slightly lower median score.
+
+Red points below the whiskers indicate buildings with evaluation scores significantly below the rest. For instance, Davenport (9), University-Rosedale (11), and Toronto-St. Paul's (12) exhibit several outliers with very low scores, potentially indicating localized issues with specific buildings in these areas.
+
+Wards like Toronto Centre (13) and Spadina-Fort York (10) exhibit tighter score distributions, suggesting more uniform building quality across the ward. In contrast, wards like Toronto-St. Paul's (12) and University-Rosedale (11) display a wider spread, reflecting greater variability in building conditions.
+
+The majority of the scores for all wards fall between 70 and 90, with exceptions in the form of outliers. This indicates a relatively consistent baseline of building conditions across these areas, though outliers and variability suggest that some buildings deviate significantly from the norm.
+
+```{r}
+#| label: fig-data4
+#| tbl-cap: "Distribution of Building Evaluation Scores Across Wards"
+#| message: false
+#| echo: false
+#| warning: false
+
+# Generate the graph
+ggplot(data, aes(x = factor(WARD), y = CURRENT.BUILDING.EVAL.SCORE)) +
+  geom_boxplot(outlier.colour = "red", outlier.shape = 16, outlier.size = 2) +
+  geom_jitter(alpha = 0.3, color = "blue", width = 0.2) +
+  labs(
+    x = "Ward",
+    y = "Current Building Evaluation Score"
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+```
 
 
 # Model {#sec-model}
 
-In our analysis, we utilized a Bayesian logistic regression model to examine the relationship between apartment evaluation and other building factors ---- built year, number of units, and location of building (ward). Background details and diagnostics are included in [Appendix -@sec-model-details].
+In our analysis, we utilized a Bayesian logistic regression model to examine the relationship between apartment evaluation and other building factors ---- built year, number of units, location (ward), and property type. Background details and diagnostics are included in Appendix @sec-model-details.
 
 ## Model set-up
 
 The model is formulated as follows:
+$$
+\begin{aligned}
+&\mbox{CURRENT.BUILDING.EVAL.SCORE}_i|\mu_i, \sigma \sim \mbox{Normal}(\mu_i, \sigma) \\
+\mu_i &= \beta_0 + \beta_1\mbox{YEAR.BUILT}_i + \beta_2\mbox{PROPERTY.TYPE.CODE}_i + \beta_3\mbox{CONFIRMED.STOREYS}_i \\
+& + \beta_4\mbox{CONFIRMED.UNITS}_i + \beta_5\mbox{WARD}_i \\
+\beta_{0, 1, ..., 5} &\sim \mbox{Normal}(0, 2.5) \\
+\sigma &\sim \mbox{Exponential}(1) \\
+\end{aligned}
+$$
+In this model, $\mbox{CURRENT.BUILDING.EVAL.SCORE}_i$ represents the evaluation score of building $i$. The mean evaluation score, $\mu_i$, is modeled as a linear combination of the intercept $\beta_0$, the effect of the year the building was built $\beta_1 \times \text{YEAR.BUILT}_i$, the effect of the building's property type $\beta_2 \times \text{PROPERTY.TYPE.CODE}_i$, the effect of the number of storeys $\beta_3 \times \text{CONFIRMED.STOREYS}_i$, the effect of the number of units $\beta_4 \times \text{CONFIRMED.UNITS}_i$, and the effect of the ward $\beta_5 \times \text{WARD}_i$. Here, $\text{YEAR.BUILT}_i$ is a continuous predictor, while $\text{PROPERTY.TYPE.CODE}_i$ and $\text{WARD}_i$ are categorical predictors that capture variability due to building type and location, respectively.
 
-```{=tex}
-\begin{align} 
-\text{SCORE}_i &\sim \mbox{Normal}(\mu_i, \sigma^2) \\
-\mu_i &= \beta_0 + \beta_1 \times \text{YEAR}_i + \beta_2 \times \text{UNITS}_i + \gamma_{\text{WARD}_i} \\
-\gamma_{\text{WARD}_i} &\sim \mbox{Normal}(0, \tau^2) \\
-\beta_0 &\sim \mbox{Normal}(0, 5) \\
-\beta_1 &\sim \mbox{Normal}(0, 5) \\
-\beta_2 &\sim \mbox{Normal}(0, 5) \\
-\tau &\sim \mbox{Half-Cauchy}(0, 2) \\
-\sigma &\sim \mbox{Half-Cauchy}(0, 2)
-\end{align}
-```
+The intercept $\beta_0$ represents the baseline evaluation score when all predictors are at their reference or zero levels. The coefficients $\beta_1, \beta_2, \beta_3, \beta_4, \beta_5$ represent the effects of each predictor on the evaluation score. For example, $\beta_1$ captures how the evaluation score changes with each additional year since the building was constructed, while $\beta_3$ quantifies the effect of an additional storey on the score. The categorical variables, $\text{PROPERTY.TYPE.CODE}_i$ and $\text{WARD}_i$, allow the model to account for systematic differences in scores due to property type and location.
 
-In this model, ($\text{SCORE}_i$) represents the evaluation score of building $i$. The mean evaluation score, ($\mu_i$), is modeled as a linear combination of the intercept ($\beta_0$), the effect of the year the building was built ($\beta_1 \times \text{YEAR}_i$), the effect of the number of units in the building ($\beta_2\times\text{UNITS}_i$), and a random effect for the location of the building ($\gamma_{\text{WARD}_i}$). Here, ($\text{YEAR}_i$) and ($\text{UNITS}_i$) are continuous predictors, while ($\gamma_{\text{WARD}_i}$) accounts for ward-specific variability in evaluation scores. The random effect ($\gamma_{\text{WARD}_i}$) is modeled as normally distributed with a mean of 0 and variance ($\tau^2$), reflecting the assumption that wards have no overall bias, but scores may vary across them.
+Each coefficient $\beta_0, \beta_1, \beta_2, \beta_3, \beta_4, \beta_5$ is assigned a weakly informative prior, $\text{Normal}(0, 2.5)$, which reflects a prior belief that most plausible values for the effects are moderate, but the prior allows for larger effects if supported by the data. This regularization helps prevent overfitting, especially in cases where predictors may be correlated or sample sizes are limited. The residual standard deviation $\sigma$, representing the variability in evaluation scores not explained by the predictors, is modeled using an $\text{Exponential}(1)$ prior, favoring smaller values of variability while still accommodating the possibility of larger residual noise.
 
-The intercept ($\beta_0$) and coefficients ($\beta_1, \beta_2$) are assigned weakly informative normal priors with a mean of 0 and a standard deviation of 5, reflecting a prior belief that most plausible values are moderate but allowing flexibility for larger effects. The variability of the ward-level random effects ($\tau$) and the residual variability ($\sigma$) are modeled using half-Cauchy priors with a scale parameter of 2, favoring smaller values while accommodating the possibility of substantial variability. This formulation ensures that the model captures both the fixed effects of the predictors and the random effects of location, providing a robust framework for analyzing the relationship between building characteristics and evaluation scores.
+This Bayesian framework provides several advantages. It captures the uncertainty in parameter estimates by modeling them probabilistically and allows for regularization through the use of weakly informative priors. By including predictors like $\text{PROPERTY.TYPE.CODE}_i$ and $\text{WARD}_i$, the model accounts for potential heterogeneity in evaluation scores arising from building type and location-specific factors, such as local policies, maintenance practices, or regional infrastructure quality. Compared to traditional frequentist approaches, this Bayesian model ensures robust inference by explicitly modeling uncertainty and leveraging prior information, resulting in more reliable and interpretable results for analyzing building evaluation scores in Toronto.
 
-This Bayesian model was chosen because it effectively accounts for the hierarchical structure of the data by including a random effect for `WARD`, capturing ward-level variability in building evaluation scores due to unobserved factors like local policies or management practices. Additionally, the Bayesian framework allows for robust inference by incorporating weakly informative priors, which regularize parameter estimates and provide a full representation of uncertainty, ensuring more reliable and interpretable results compared to traditional frequentest approaches.
-
-We run the model in R [@citeR] using the `rstanarm` [@citeRstanarm] package of . We use the default priors from `rstanarm`.
+We run the model in R [@citeR] using the `rstanarm` [@citeRstanarm] package.
 
 ## Model justification
 
-Regarding the relationship between building characteristics and evaluation scores, we anticipate that newer buildings are more likely to receive higher evaluation scores. This expectation stems from the assumption that newer buildings are constructed with modern materials and methods, adhere to updated standards, and are less prone to deterioration. Conversely, older buildings may face challenges related to aging infrastructure, which could negatively impact their evaluation scores if maintenance is not consistently performed.
+Regarding the relationship between building characteristics and evaluation scores, we hypothesize that newer buildings are more likely to receive higher evaluation scores. This assumption is based on the premise that newer buildings typically adhere to updated construction codes, utilize modern materials, and are less affected by wear and tear compared to older buildings. In contrast, older buildings may experience structural or aesthetic degradation over time, leading to lower scores unless significant maintenance or renovation efforts are undertaken.
 
-Similarly, we expect a positive relationship between the number of units in a building and evaluation scores. Larger buildings often have more structured management systems and resources allocated for maintenance, which can lead to better compliance with property standards. In contrast, smaller buildings may lack the economies of scale and organizational support that larger properties benefit from, potentially resulting in lower scores.
+The number of storeys is expected to positively correlate with evaluation scores. Taller buildings often cater to higher population densities and are generally built to more stringent standards due to the complexities associated with high-rise construction. Furthermore, these buildings may attract greater investment in terms of maintenance and infrastructure to ensure compliance with regulations and to retain their functionality over time.
 
-Finally, the inclusion of a random effect for 'WARD' accounts for geographic variability in evaluation scores. Factors such as neighborhood characteristics, local regulations, and differences in inspection practices across wards may influence building evaluations. This hierarchical structure ensures that the model appropriately captures these unobserved factors, making the predictions more robust and reflective of real-world dynamics.
+Similarly, we anticipate that the number of units in a building will positively impact evaluation scores. Larger buildings with more units often benefit from economies of scale, allowing for structured property management systems, dedicated maintenance teams, and better allocation of resources. These factors can contribute to consistent upkeep and adherence to property standards. Conversely, smaller buildings may face resource constraints or lack formal management systems, which could result in lower scores.
+
+The inclusion of property type as a predictor captures differences between building categories, such as private properties, social housing, and TCHC buildings. Each category may face unique challenges and standards based on ownership structure, funding, and operational priorities, which can influence evaluation scores. For example, private buildings may have more financial resources for maintenance, while social housing may face budgetary constraints that impact building conditions.
+
+Finally, the inclusion of ward as a predictor accounts for geographic variability in evaluation scores. Wards represent different neighborhoods in Toronto, each potentially influenced by unique local factors such as socioeconomic conditions, zoning policies, infrastructure quality, and inspection practices. By modeling the effect of wards, the model ensures that unobserved geographic and policy-related factors are captured, improving the robustness of the predictions.
+
+This Bayesian framework was chosen because it allows for the integration of prior knowledge while providing robust uncertainty estimates for each parameter. The weakly informative priors help prevent overfitting, especially when predictors like $\text{PROPERTY.TYPE.CODE}_i$ and $\text{WARD}_i$ introduce categorical variability. By including these key building characteristics and accounting for geographic variability, the model offers a nuanced understanding of how structural and contextual factors influence building evaluation scores.
 
 ## Model limitation
 
@@ -213,17 +276,22 @@ Together, the results underscore the significant roles of building age, size, an
 #| warning: false
 #| message: false
 #| label: tbl-modelresults
-#| tbl-cap: "Explanatory model Building Evaluation (n = [Insert Sample Size])"
+#| tbl-cap: "Explanatory model Building Evaluation"
 
-# Load the saved Bayesian model
-bayesian_model <- readRDS(file = "/cloud/project/model/bayesian_model.rds")
 
-# Generate the model summary table
-modelsummary(
-  list(
-    "Building Evaluation" = bayesian_model
-  ),
-  statistic = "mad",
+#### Load the Model ####
+# Load the saved model
+bayesian_model <- readRDS("/cloud/project/model/bayesian_model.rds")
+
+#### Generate Summary Table ####
+# Create a well-formatted table for the Bayesian model
+tab_model(
+  bayesian_model,
+  show.ci = TRUE,          # Show credible intervals
+  show.se = TRUE,          # Show standard errors
+  digits = 3,              # Number of digits to round coefficients
+  title = "Building Evaluation Score Model",  # Title of the table
+  dv.labels = "Evaluation Score"
 )
 
 ```
@@ -293,60 +361,16 @@ Finally, applying more flexible modeling approaches could capture complex intera
 
 raw_data <- read.csv("/cloud/project/data/01-raw_data/raw_apt_data.csv")
 
-raw_data[1:5, 1:5] |>
-  kable()
-
-raw_data[1:5, 6:10] |>
-  kable()
+print(head(raw_data[, 1:10], 5), width = 100)
 ```
 
 ## Selected variables
 
-@tbl-feature shows the explanation of the chosen variables.
+We choose several variables for our report. The "RSN" (Record Serial Number) is the ID number for a building in RentSafeTO Open Data Sets.The "WARD" variable indicates the location where the building is located, represented numerically. Wards are geographical divisions within the city, and their names are specified in the "WARDNAME" variable. The "YEAR.BUILT" variable records the year the building was constructed. The "PROPERTY.TYPE" variable describes the type of property ownership (private, social housing, and TCHC). "CONFIRMED.STOREYS" denotes the number of floors in the building, while "CONFIRMED.UNITS" represents the total number of housing units in the building.
 
-```{r}
-#| label: tbl-feature
-#| tbl-cap: "Selected feature of the RentSafeTo dataset"
-#| message: false
-#| echo: false
-#| warning: false
+Finally, the "CURRENT.BUILDING.EVAL.SCORE" is an assessment of the building's compliance with property standards. This score is derived by combining reactive scores (responses to complaints or issues) and proactive scores (regular inspections or maintenance reports). It serves as a comprehensive measure of the building's condition and adherence to local property regulations.
 
-# Define the data features
-feature <- tibble(
-  Data_feature = c(
-    "RSN", 
-    "WARD", 
-    "WARDNAME", 
-    "YEAR.BUILT", 
-    "PROPERTY.TYPE", 
-    "CONFIRMED.STOREYS", 
-    "CONFIRMED.UNITS", 
-    "CURRENT.BUILDING.EVAL.SCORE", 
-    "PROACTIVE.BUILDING.SCORE", 
-    "CURRENT.REACTIVE.SCORE"
-  ),
-  Data_definition = c(
-    "ID number for a building", 
-    "Ward where the building is located", 
-    "Name of the ward", 
-    "Year the building was built", 
-    "Type of property owner", 
-    "Number of storeys in the building", 
-    "Number of units in the building", 
-    "An assessment of the building's compliance with property standards, calculated by combining the reactive and proactive scores", 
-    "The score of the latest proactive evaluation of a building's common areas, reflecting weighted scores of applicable categories", 
-    "Total score for all applicable Orders and Notices of Violation issued for a building"
-  )
-)
-
-# Create the table and apply formatting
-kable(feature, format = "latex", booktabs = TRUE) %>%
-  kable_styling() %>%
-  column_spec(1, bold = TRUE, width = "20em") %>%  
-  column_spec(2, width = "25em")  
-```
-
-Particularly, 'WARD' is the number from the 25-ward system (@ward) which is used to mark different regions in Toronto. In this research, we choose 11 and 13 which are 'University-Rosedale' and 'Toronto Centre'.
+Particularly, 'WARD' is the number from the 25-ward system (@ward) which is used to mark different regions in Toronto. In this report, we choose 9, 10, 11, 12, 13, and 14, which are 'Davenport', 'Spadina-Fort York', 'University-Rosedale', 'Toronto-St. Paul's', 'Toronto Centre', and 'Toronto-Danforth'.
 
 # Model details {#sec-model-details}
 
