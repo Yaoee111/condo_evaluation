@@ -1,7 +1,7 @@
-# Understanding Apartment Evaluation in Toronto: Age, Size, and Location Influenced Score with Property Standards
+# Building Evaluation Scores in Downtown Toronto: Age, Size, Property Type, and Location Affect Score with Property Standards
 
 ## Overview
-This repository contains the analysis of building evaluation scores in Toronto, as reported under the RentSafeTO program. Using a Bayesian regression model, we examined the impact of building characteristics such as year built, number of units, and geographic location (ward) on compliance with property standards.
+This repository contains the analysis of building evaluation scores in Toronto, as reported under the RentSafeTO program. Using a Bayesian regression model, we examined the impact of building characteristics such as year built, number of units, property type, and geographic location on compliance with property standards.
 
 To use this folder, click the green "Code" button, then "Download ZIP". Move the downloaded folder to your desired location on your computer, and then modify it as needed.
 
