@@ -32,7 +32,7 @@ library(ggdist)
 #| warning: false
 #| message: false
 
-data <- read.csv("/cloud/project/data/02-analysis_data/toronto_apartment_evaluation.csv")
+data <- read.csv("/data/02-analysis_data/toronto_apartment_evaluation.csv")
 ```
 
 
@@ -59,7 +59,7 @@ The estimand in this paper is the evaluation score of apartment buildings as a m
 
 # Data {#sec-data}
 
-We use the statistical programming language R [@citeR] with packages `tidyverse` [@citeTidyverse], , `rstanarm` [@citerstanarm], `knitr` [@citeKnitr], `ggplot2` [@citeggplot2], `sjPlot` [@citesjPlot], `patchwork` [@citepatchwork], `ggdist` [@citeggdist], and follow @tellingstories.
+We use the statistical programming language R [@citeR] with packages `tidyverse` [@citeTidyverse], `rstanarm` [@citerstanarm], `knitr` [@citeKnitr], `ggplot2` [@citeggplot2], `sjPlot` [@citesjPlot], `patchwork` [@citepatchwork], `ggdist` [@citeggdist], and follow @tellingstories.
 
 ## Data source
 
@@ -97,7 +97,7 @@ Outliers in the older buildings with high scores could reflect cases where older
 
 ```{r}
 #| label: fig-data1
-#| tbl-cap: "Relationship between Evaluation Score and Year Built"
+#| fig-cap: "Relationship between Evaluation Score and Year Built"
 #| message: false
 #| echo: false
 #| warning: false
@@ -117,7 +117,7 @@ The graph suggests that Social Housing and TCHC properties are generally more co
 
 ```{r}
 #| label: fig-data2
-#| tbl-cap: "Evaluation Score by Property Type"
+#| fig-cap: "Evaluation Score by Property Type"
 #| message: false
 #| echo: false
 #| warning: false
@@ -140,7 +140,7 @@ Together, @fig-data3 highlight key patterns in how building size, as measured by
 
 ```{r}
 #| label: fig-data3
-#| tbl-cap: "Relationships Between Evaluation Score, Units, and Storeys"
+#| fig-cap: "Relationships Between Evaluation Score, Units, and Storeys"
 #| message: false
 #| echo: false
 #| warning: false
@@ -192,7 +192,7 @@ The majority of the scores for all wards fall between 70 and 90, with exceptions
 
 ```{r}
 #| label: fig-data4
-#| tbl-cap: "Distribution of Building Evaluation Scores Across Wards"
+#| fig-cap: "Distribution of Building Evaluation Scores Across Wards"
 #| message: false
 #| echo: false
 #| warning: false
@@ -289,7 +289,7 @@ In summary, newer buildings generally perform better. Larger buildings, with mor
 
 #### Load the Model ####
 # Load the saved model
-bayesian_model <- readRDS("/cloud/project/model/bayesian_model.rds")
+bayesian_model <- readRDS("/model/bayesian_model.rds")
 
 #### Generate Summary Table ####
 # Create a well-formatted table for the Bayesian model
@@ -374,9 +374,18 @@ Finally, applying more flexible modeling approaches could capture complex intera
 #| echo: false
 #| warning: false
 
-raw_data <- read.csv("/cloud/project/data/01-raw_data/raw_apt_data.csv")
+# Load the dataset
+raw_data <- read.csv("/data/01-raw_data/raw_apt_data.csv")
 
-print(head(raw_data[, 1:10], 5), width = 100)
+# Display the first 5 rows and first 10 columns in a nicely formatted table
+kable(
+  head(raw_data[, 1:8], 5),
+  format = "html",  # Use "html" for HTML output, or "latex" for PDF
+  col.names = c(
+    "ID", "RSN", "Year Registered", "Year Built", "Year Evaluated",
+    "Property Type", "Ward", "Ward Name"),
+  align = "l"
+)
 ```
 
 ## Selected variables
@@ -402,7 +411,7 @@ library(rstanarm)
 
 
 # Load the saved model
-bayesian_model <- readRDS("/cloud/project/model/bayesian_model.rds")
+bayesian_model <- readRDS("/model/bayesian_model.rds")
 
 # Perform posterior predictive checks
 pp_check(bayesian_model, type = "dens_overlay") +
@@ -472,7 +481,7 @@ In @fig-post_dist, we compare the model's predicted values to the observed data.
 #| layout-ncol: 2
 
 # Load the saved model
-bayesian_model <- readRDS("/cloud/project/model/bayesian_model.rds")
+bayesian_model <- readRDS("/model/bayesian_model.rds")
 
 # Trace plots for key fixed effects
 plot(bayesian_model, "trace", "(Intercept)")
