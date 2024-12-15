@@ -1,12 +1,12 @@
 ---
-title: "Understanding Apartment Evaluation in Toronto"
-subtitle: "Age, Size, and Location Influenced Score with Property Standards"
+title: "Building Evaluation Scores in Downtown Toronto"
+subtitle: "Age, Size, Property Type, and Location Affect Score with Property Standards"
 author: 
   - Yiyi Yao
 thanks: "Code and data are available at: [https://github.com/Yaoee111/condo_evaluation]."
-date: 03 December, 2024
+date: 14 December, 2024
 date-format: long
-abstract: "This paper analyzes building evaluation scores from Toronto's RentSafeTO program to understand the factors influencing compliance with property standards. Using a Bayesian regression model, we examined the relationships between building characteristics such as year built, number of units, and geographic location. We found that newer buildings, larger properties, and those in specific wards are more likely to achieve higher evaluation scores, reflecting better maintenance and compliance. These findings highlight the importance of modern construction, economies of scale in property management, and localized enforcement practices in ensuring housing quality, offering insights to policymakers and property managers striving to improve urban housing standards."
+abstract: "This paper analyzes building evaluation scores from Toronto's RentSafeTO program to understand the factors influencing compliance with property standards. Using a Bayesian regression model, we examined the relationships between building characteristics such as year built, number of units, property type, and geographic location. We found that newer buildings, larger properties, certain property type, and those in specific regions are more likely to achieve higher evaluation scores. These findings highlight the importance of modern construction, economies of scale in property management, and localized enforcement practices in ensuring housing quality. This report can guide policymakers and property managers in improving urban housing conditions."
 format: pdf
 toc: true
 number-sections: true
@@ -20,7 +20,7 @@ bibliography: references.bib
 
 library(tidyverse)
 library(knitr)
-library(rstanarm)
+
 library(sjPlot)
 library(ggplot2)
 library(patchwork)
@@ -38,13 +38,15 @@ data <- read.csv("/cloud/project/data/02-analysis_data/toronto_apartment_evaluat
 
 # Introduction
 
-Ensuring the quality and safety of rental housing is a critical issue in urban areas, especially as cities like Toronto face growing populations and aging infrastructure. The RentSafeTO program, launched in 2017, is a bylaw enforcement initiative designed to maintain property standards for multi-unit residential buildings. This program assesses compliance with maintenance standards, focusing on elements such as building exteriors, mechanical systems, and common areas. While the program provides a structured approach to evaluating building conditions, understanding the factors that influence these evaluation scores remains crucial for improving housing standards and targeting interventions effectively.
+Cities like Toronto face significant challenges in maintaining safe and high-quality housing, especially as populations grow and infrastructure ages. In 2017, the city launched RentSafeTO, a bylaw enforcement program designed to ensure multi-unit residential buildings meet essential property standards. This program carefully assesses buildings' exteriors, mechanical systems, and common areas.
+While RentSafeTO provides a systematic approach to evaluating building conditions, questions remain about what factors most impact assessment scores. Our research examines the primary elements that affect building evaluations across downtown Toronto, studying how a building's age, size, type, and location influence compliance with property standards.
 
-This paper investigates the key determinants of building evaluation scores in Toronto, using data from the RentSafeTO program. Specifically, we examine how building characteristics—such as the year of construction, number of units, and geographic location (ward)—affect compliance with property standards. Despite the availability of detailed evaluation data, limited research has explored the underlying factors that contribute to variations in scores across buildings and neighborhoods. This gap is significant, as understanding these relationships can inform policy decisions and enhance the effectiveness of programs like RentSafeTO.
+Using a Bayesian linear regression model, we analyzed the relationships between building characteristics and evaluation scores. Our findings highlight several important observations:
+Newer buildings and larger properties tend to receive higher evaluation scores. This is likely because of modern construction techniques and better management resources. Geographic location also plays a significant role, with some neighborhoods consistently performing better or worse than others.
 
-To address this gap, we applied a Bayesian linear regression model to analyze the relationships between building characteristics and evaluation scores. This model accounts for ward-level variability through random effects, capturing local factors that may influence compliance. The findings reveal that newer buildings and larger properties generally achieve higher evaluation scores, likely due to modern construction practices and economies of scale in property management. Additionally, geographic location plays a significant role, with some wards showing consistently higher or lower scores, reflecting neighborhood-specific dynamics.
+These results provide meaningful guidance for policymakers and property managers. By understanding the factors that influence building compliance, we can target maintenance efforts more strategically, refine policy interventions, and improve the consistency of property evaluations
 
-These results are important because they provide actionable insights for policymakers and property managers. By identifying the factors that influence compliance, this research highlights opportunities to prioritize maintenance efforts, target policy interventions, and improve the consistency of property evaluations. Ultimately, understanding these dynamics can contribute to better housing conditions and more equitable enforcement of property standards across Toronto.
+Ultimately, this research aims to support better housing conditions and more effective enforcement of property standards across Toronto. By identifying the main drivers of building performance, we can work towards creating safer, more reliable rental housing for the city's residents.
 
 The remainder of this paper is organized into distinct sections. @sec-data provides an overview of the dataset used in our analysis, including tables and graphs to illustrate the characteristics of buildings and evaluation scores. @sec-model outlines the Bayesian model employed, explaining its formulation and justification. @sec-result presents the findings, using tables and visualizations to highlight the relationships between building characteristics and evaluation scores. Finally, @sec-discussion offers a detailed discussion of the results, focusing on how factors such as construction year, building size, and geographic location influence compliance with property standards. 
 
@@ -57,7 +59,7 @@ The estimand in this paper is the evaluation score of apartment buildings as a m
 
 # Data {#sec-data}
 
-We use the statistical programming language R [@citeR] with packages `tidyverse` [@citeTidyverse], , `rstanarm` [@rstanarm], `knitr` [@citeKnitr], `tidybayes` [@tidybayes], `ggplot2` [@citeggplot2], `sjPlot` [@citesjPlot], `patchwork` [@citepatchwork], `ggdist` [@citeggdist], and follow @tellingstories.
+We use the statistical programming language R [@citeR] with packages `tidyverse` [@citeTidyverse], , `rstanarm` [@citerstanarm], `knitr` [@citeKnitr], `ggplot2` [@citeggplot2], `sjPlot` [@citesjPlot], `patchwork` [@citepatchwork], `ggdist` [@citeggdist], and follow @tellingstories.
 
 ## Data source
 
@@ -65,13 +67,19 @@ Data for this research comes from RentSafeTO program provided by Open Data Toron
 
 ## Data Features
 
-The original RentSafeTo dataset, which shows in Appendix @sec-data-details, contains 3573 data entries and many variables. Since we only interested in data in downtown Toronto, this report will only explore and analyze through several data features. We chose these 8 variables: RSN, WARD, WARDNAME, YEAR.BUILT, PROPERTY.TYPE, CONFIRMED.STOREYS, CONFIRMED.UNITS, CURRENT.BUILDING.EVAL.SCORE. Details of these selected variables are also in @sec-data-details. We could use such features to predict building condition in downtown Toronto.
+The original RentSafeTo dataset, which shows in Appendix @sec-data-details, contains 3573 data entries and many variables. Since we only interested in data in downtown Toronto, this report will only explore and analyze through several data features. We chose these 8 variables: RSN, WARD, WARDNAME, YEAR.BUILT, PROPERTY.TYPE, CONFIRMED.STOREYS, CONFIRMED.UNITS, CURRENT.BUILDING.EVAL.SCORE. After data cleaning, there are 979 rows of data remained. Details of these selected variables are also in @sec-data-details. We could use such features to predict building condition in downtown Toronto.
 
 ## Data Measurement
 
-The data in this dataset was collected by bylaw enforcement officers as part of the RentSafeTO program. These inspections evaluate building maintenance standards across various categories, such as exterior grounds, mechanical systems, and common areas. Scores are assigned on a scale of 1 to 3, with 1 being the lowest and 3 being the highest. A score of 0 is given when an item cannot be evaluated due to obstruction or refusal, and blanks are recorded when an item is not applicable.
+The evaluation scores in the dataset represent the extent to which buildings meet maintenance standards based on inspections. These inspections cover aspects such as building exteriors, mechanical systems, and common areas, and the results are recorded as numerical scores ranging from 0 to 100. The variable CURRENT.BUILDING.EVAL.SCORE is derived by combining reactive inspections (initiated by tenant complaints) and proactive inspections (routine checks conducted by the city). While the program's structured evaluation process aims to ensure consistency, scores may still be influenced by inspectors' subjective judgments or variations in enforcement across wards.
 
-The unit of measurement for most numerical data is an ordinal score (1 to 3). Other features, such as building types or ward names, are categorical with no specific units.
+The variable YEAR.BUILT indicates the year each building was constructed, reflecting the age of the property. This information is sourced from municipal property records. However, older buildings may have incomplete or inaccurate records, which could affect the precision of this variable. The assumption underlying this variable is that newer buildings are likely to comply better with modern construction standards, which could positively influence their evaluation scores.
+
+CONFIRMED.UNITS represents the number of units within each building, as recorded in municipal databases. This variable reflects the size of the property and its capacity to house tenants. Larger buildings with more units might have better resources for property management, but they could also face challenges in maintaining compliance due to their scale. Similarly, the variable CONFIRMED.STOREYS captures the number of storeys in a building, which can indicate its vertical size and complexity. Both variables rely on official records, which are generally reliable but may occasionally contain errors or outdated information due to changes in building usage or renovations.
+
+The variable PROPERTY.TYPE.CODE categorizes buildings into private properties, social housing, or Toronto Community Housing Corporation (TCHC) properties. This classification is based on ownership and management type, which can significantly influence the availability of resources for maintenance and compliance. Private properties typically have more financial resources for upkeep, while social housing and TCHC properties may face funding constraints, which could affect their evaluation scores.
+
+WARD indicates the geographic location of the building, based on Toronto’s ward boundaries. This variable allows us to capture local factors such as neighborhood policies, socioeconomic conditions, or differences in enforcement practices. Geographic location is an important consideration because it reflects the broader context within which a building operates, including variations in infrastructure quality and local government support. The dataset associates each building with its respective ward at the time of inspection, ensuring geographic consistency.
 
 ## Data limitation
 
@@ -227,7 +235,7 @@ Each coefficient $\beta_0, \beta_1, \beta_2, \beta_3, \beta_4, \beta_5$ is assig
 
 This Bayesian framework provides several advantages. It captures the uncertainty in parameter estimates by modeling them probabilistically and allows for regularization through the use of weakly informative priors. By including predictors like $\text{PROPERTY.TYPE.CODE}_i$ and $\text{WARD}_i$, the model accounts for potential heterogeneity in evaluation scores arising from building type and location-specific factors, such as local policies, maintenance practices, or regional infrastructure quality. Compared to traditional frequentist approaches, this Bayesian model ensures robust inference by explicitly modeling uncertainty and leveraging prior information, resulting in more reliable and interpretable results for analyzing building evaluation scores in Toronto.
 
-We run the model in R [@citeR] using the `rstanarm` [@citeRstanarm] package.
+We run the model in R [@citeR] using the `rstanarm` [@citerstanarm] package.
 
 ## Model justification
 
@@ -258,17 +266,17 @@ Additional details about the model and validation processes are provided in Appe
 
 # Results {#sec-result}
 
-Our results are summarized in @tbl-modelresults. The findings align well with our expectations regarding the relationships between building characteristics and evaluation scores. To avoid multicollinearity, the model excludes one variable from each category as the reference group: 'WARD' for the ward variable and buildings with fewer than 10 units for the 'CONFIRMED.UNITS' variable. The intercept represents the estimated evaluation score for buildings in 'WARD' with fewer than 10 units, and this baseline score is [Insert Intercept Value Here].
+Our results are summarized in @tbl-modelresults. The analysis found the relationships between building characteristics and evaluation scores under Toronto's RentSafeTO program. To establish a baseline, the model uses reference groups for categorical variables. The intercept (-27.459) represents the estimated evaluation score for buildings in the reference ward (likely Ward 9) with fewer than 10 units and without other distinguishing features. 
 
-As anticipated, 'YEAR.BUILT' has a positive coefficient, indicating that newer buildings tend to have higher evaluation scores. This suggests that newer buildings, benefiting from modern construction techniques and materials, are generally better maintained or designed to meet higher standards. The positive relationship implies that each additional year of construction is associated with a slight increase in evaluation scores, reflecting the advantages of newer infrastructure.
+The positive coefficient for `YEAR.BUILT` (0.055) indicates that newer buildings generally achieve higher evaluation scores. This suggests that each additional year of construction is associated with a small increase in the score.
 
-The number of units in a building ('CONFIRMED.UNITS') also plays a significant role. Buildings with 50–100 units or more than 100 units have higher evaluation scores compared to smaller buildings. The coefficients suggest that larger buildings, likely equipped with better management systems and resources, are better positioned to meet property standards. For instance, buildings with more than 100 units show a larger increase in evaluation scores than those with 50–100 units, further reinforcing the importance of scale in property maintenance.
+The coefficient for `CONFIRMED.STOREYS` (0.234) shows that taller buildings tend to have slightly higher scores, possibly because such properties are better maintained or built to stricter design requirements. Similarly, the number of units (`CONFIRMED.UNITS`) has a small positive coefficient (0.002), suggesting that larger buildings may benefit from more structured management practices and resources, contributing to better compliance.
 
-Geographic location, as captured by 'WARD', exhibits notable variability. Some wards have positive coefficients, indicating higher average evaluation scores compared to the reference ward, while others show negative coefficients, suggesting lower scores. This variability underscores the influence of local factors such as neighborhood policies, inspection practices, or socioeconomic conditions on building evaluations.
+For `PROPERTY.TYPE.CODE`, the negative coefficients (-0.547 for Code 2 and -0.301 for Code 3) indicate that certain property types, social housing and TCHC, tend to have lower scores compared to private properties. This difference may stem from funding or maintenance constraints associated with non-private ownership types.
 
-@fig-modelresults1 visualizes the 90% credibility intervals for model predictors, offering insights into the certainty of each estimate. Key predictors such as 'YEAR.BUILT', 'CONFIRMED.UNITS', and certain ward effects have credibility intervals that do not overlap zero, indicating strong evidence of their influence on evaluation scores. However, some wards have wider intervals overlapping zero, highlighting uncertainty in their effects.
+Geographic location, `WARD`, shows significant variability. For example, buildings in Ward 12 (6.189) and Ward 14 (6.968) have higher scores compared to the reference ward. This suggests localized factors, such as better enforcement of property standards or more resources allocated for building maintenance. In contrast, some wards show less pronounced increases, which might reflect differences in policies, socioeconomic conditions, or inspection practices across neighborhoods.
 
-Together, the results underscore the significant roles of building age, size, and geographic location in determining evaluation scores. These findings suggest that newer, larger buildings in certain wards are better positioned to meet the standards set by the RentSafeTO program. The credibility intervals provide a nuanced understanding of the statistical significance and uncertainty of these predictors.
+In summary, newer buildings generally perform better. Larger buildings, with more units and storeys, tend to achieve higher scores. Private properties have higher scores compared to social housing and TCHC. Geographic location also matters, as buildings in certain wards consistently score higher. These factors together provide a clear picture of what influences compliance with property standards in Toronto.
 
 ```{r}
 #| echo: false
@@ -287,10 +295,9 @@ bayesian_model <- readRDS("/cloud/project/model/bayesian_model.rds")
 # Create a well-formatted table for the Bayesian model
 tab_model(
   bayesian_model,
-  show.ci = TRUE,          # Show credible intervals
-  show.se = TRUE,          # Show standard errors
-  digits = 3,              # Number of digits to round coefficients
-  title = "Building Evaluation Score Model",  # Title of the table
+  show.ci = TRUE,          
+  show.se = TRUE,          
+  digits = 3,              
   dv.labels = "Evaluation Score"
 )
 
@@ -303,11 +310,19 @@ tab_model(
 
 ##  Achievements {#sec-first-point}
 
-In this paper, we analyzed building evaluation scores from the RentSafeTO dataset to investigate the factors influencing compliance with property standards in Toronto. Using a Bayesian linear regression model, we examined how building characteristics—such as year built, number of units, and geographic location (ward)—affect evaluation scores. Our analysis incorporated random effects to account for ward-level variability and used weakly informative priors to ensure robust inference.
+Our research investigated the factors influencing property standard compliance in Toronto using the RentSafeTO dataset. We employed a Bayesian linear regression model to examine how building characteristics—including construction year, number of units, and geographic location—impact evaluation scores.
 
-We selected a subset of the dataset focused on downtown Toronto and identified key predictors of building evaluation scores. The results highlight the positive relationships between newer construction, larger building size, and higher evaluation scores, while also revealing variability in scores across different wards. We visualized these relationships using regression plots, boxplots, and credibility interval plots, providing a clear picture of the factors contributing to evaluation outcomes.
+The study focused on downtown Toronto, carefully analyzing a subset of the dataset to identify the most significant predictors of building performance. Our approach incorporated statistical methods that account for neighborhood-specific variations, allowing for a nuanced understanding of property standards.
 
-Our findings emphasize the importance of building characteristics and local context in determining compliance with property standards. This paper also demonstrates the utility of Bayesian modeling for analyzing hierarchical datasets like RentSafeTO, offering flexibility in capturing both fixed effects and random variability. By focusing on actionable insights, we aim to inform property management practices and policy decisions aimed at improving housing standards in Toronto.
+Key findings emerged from our analysis:
+
+ - Building Age and Size Matter: Newer buildings and larger properties consistently received higher evaluation scores. This suggests that construction quality and management resources play a substantial role in maintaining property standards.
+ - Geographic Variations: Evaluation scores showed meaningful differences across different wards, highlighting the importance of local context in property maintenance.
+ - Modeling Approach: By using Bayesian linear regression with random effects and weakly informative priors, we developed a robust statistical framework for understanding complex housing data.
+
+Visualization techniques, including regression plots, boxplots, and credibility interval representations, provided clear insights into the relationships between building characteristics and evaluation scores.
+
+Our work demonstrates the power of sophisticated statistical modeling in understanding urban housing challenges. By breaking down the complex factors that influence building evaluations, we provide actionable information for property managers, policymakers, and urban planners working to improve housing standards in Toronto.
 
 ## About Building Maintenance and Standards {#sec-second-point}
 
@@ -382,6 +397,9 @@ Particularly, 'WARD' is the number from the 25-ward system (@ward) which is used
 #| echo: false
 #| warning: false
 #| message: false
+
+library(rstanarm)
+
 
 # Load the saved model
 bayesian_model <- readRDS("/cloud/project/model/bayesian_model.rds")
@@ -472,36 +490,6 @@ plot(bayesian_model, "trace", "CONFIRMED.UNITS")
 
 plot(bayesian_model, "rhat")
 ```
-
-
-# 90% Credibility Interval {#sec-credibility-interval}
-
-@fig-modelresults is a 90% credibility interval plot.
-
-```{r}
-#| echo: false
-#| eval: true
-#| warning: false
-#| message: false
-#| label: fig-modelresults
-#| fig-cap: "90% Credibility Intervals for Building Evaluation Model Predictors"
-
-# Load the saved model
-bayesian_model <- readRDS("/cloud/project/model/bayesian_model.rds")
-
-# Generate 90% credibility interval plot
-modelplot(bayesian_model, conf_level = 0.90, size = 0.2) +
-  labs(
-    x = "90% Credibility Interval",
-    title = "Credible Intervals for Building Evaluation Model Predictors"
-  ) +
-  theme(
-    axis.text.y = element_text(size = 6),
-    axis.title.y = element_blank() # Remove y-axis title for a cleaner look
-  )
-
-```
-
 
 @fig-trace is a trace plot. It shows the sampling paths for key fixed effects, including the intercept, 'YEAR.BUILT', and 'CONFIRMED.UNITS', across all Markov chains. The plots demonstrate good mixing, with chains overlapping and exploring the posterior distribution consistently without any visible drifts or irregular patterns. This suggests that the sampling process converged for these parameters, providing reliable estimates for the posterior distributions.
 
