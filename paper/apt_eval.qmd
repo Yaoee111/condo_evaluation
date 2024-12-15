@@ -3,7 +3,7 @@ title: "Building Evaluation Scores in Downtown Toronto"
 subtitle: "Age, Size, Property Type, and Location Affect Score with Property Standards"
 author: 
   - Yiyi Yao
-thanks: "Code and data are available at: [https://github.com/Yaoee111/condo_evaluation]."
+thanks: "Code and data are available at: https://github.com/Yaoee111/condo_evaluation."
 date: 14 December, 2024
 date-format: long
 abstract: "This paper analyzes building evaluation scores from Toronto's RentSafeTO program to understand the factors influencing compliance with property standards. Using a Bayesian regression model, we examined the relationships between building characteristics such as year built, number of units, property type, and geographic location. We found that newer buildings, larger properties, certain property type, and those in specific regions are more likely to achieve higher evaluation scores. These findings highlight the importance of modern construction, economies of scale in property management, and localized enforcement practices in ensuring housing quality. This report can guide policymakers and property managers in improving urban housing conditions."
