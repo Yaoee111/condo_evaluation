@@ -1,7 +1,7 @@
 #### Preamble ####
 # Purpose: Test the analysis data about apartment evaluation.
 # Author: Yiyi Yao
-# Date: 03 December 2024
+# Date: 14 December 2024
 # Contact: ee.yao@mail.utoronto.ca
 # License: MIT
 # Pre-requisites: 02-clean_data.R

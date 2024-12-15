@@ -1,7 +1,7 @@
 #### Preamble ####
 # Purpose: Download and save the data about apartment evaluation from the Toronto Open Data.
 # Author: Yiyi Yao
-# Date: 03 December 2024
+# Date: 14 December 2024
 # Contact: ee.yao@mail.utoronto.ca
 # License: MIT
 # Pre-requisites: none

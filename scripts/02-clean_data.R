@@ -1,7 +1,7 @@
 #### Preamble ####
 # Purpose: Clean the raw data about apartment evaluation to make it clear for analysis.
 # Author: Yiyi Yao
-# Date: 03 December 2024
+# Date: 14 December 2024
 # Contact: ee.yao@mail.utoronto.ca
 # License: MIT
 # Pre-requisites: 01-download_data.R
